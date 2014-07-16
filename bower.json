@@ -1,0 +1,25 @@
+{
+	"name": "simchecklist",
+	"version": "0.0.0",
+	"homepage": "https://github.com/WillsB3/Sim-Checklist",
+	"authors": [
+		"Wills Bithrey <wills@willsbithrey.com>"
+	],
+	"description": "",
+	"license": "MIT",
+	"private": true,
+	"devDependencies": {},
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"angular": "~1.2.16",
+		"angular-ui-router": "~0.2.10",
+		"modernizr": "~2.8.1"
+	}
+}

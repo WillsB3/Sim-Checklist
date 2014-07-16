@@ -1,0 +1,3 @@
+dev:
+  files:
+    '<%= build %>/css/<%= package.name %>.css' : '<%= scss %>/<%= package.name %>.scss'

@@ -1,0 +1,9 @@
+javascript:
+  files: 
+    - 
+      expand: true
+      cwd: 'static/src/'
+      src: 
+        - '*'
+      dest: 'static/build/js/'
+      filter: 'isFile'

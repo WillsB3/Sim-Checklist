@@ -1,0 +1,13 @@
+scss:
+  files: 
+    - '<%= scss %>/**/*.scss'
+  tasks: 
+    - 'sass'
+  options:
+    livereload: false
+
+js:
+  files:
+    - '<%= js %>/**/*.js'
+  tasks:
+    - 'copy:javascript'
