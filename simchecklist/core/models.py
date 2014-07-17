@@ -13,8 +13,12 @@ class Aircraft(models.Model):
 class Checklist(models.Model):
     aircraft = models.OneToOneField(Aircraft)
 
+    def __unicode__(self):
+        return self.aircraft.name
+
 class ChecklistPhase(models.Model):
     name = models.CharField(max_length=200)
+    checklist = models.ForeignKey(Checklist)
 
     def __unicode__(self):
         return self.name
@@ -22,7 +26,7 @@ class ChecklistPhase(models.Model):
 class ChecklistStep(models.Model):
     item = models.CharField(max_length=200)
     action = models.CharField(max_length=200)
-    # steps = models.OneToManyField(ChecklistStep)
+    checklist_phase = models.ForeignKey(ChecklistPhase)
 
 class User(AbstractUser):
     aircraft = models.ManyToManyField(Aircraft)
