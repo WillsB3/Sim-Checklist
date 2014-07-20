@@ -38,12 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'debug_toolbar',
     'rest_framework',
+    'nested_inline',
     'simchecklist.core',
 )
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-AUTH_USER_MODEL = 'core.User'
+# AUTH_USER_MODEL = 'core.User'
 
 # Django Rest Framework
 
