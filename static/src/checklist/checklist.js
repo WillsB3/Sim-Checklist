@@ -31,8 +31,16 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', ['$scope', function ($scope) {
+		.controller('ChecklistDetailCtrl', ['$scope', '$http', function ($scope, $http) {
+			var phasesPromises;
 
+			phasesPromises = $http
+				.get('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json')
+				.success(function (phases) {
+					$scope.phases = phases;
+				});
+
+			console.log($scope.phases);
 		}]);
 
 }());

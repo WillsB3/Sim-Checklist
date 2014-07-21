@@ -1,0 +1,506 @@
+{
+	"1": {
+		"name": "Preflight",
+		"steps": [
+			{
+				"item": "Documentation",
+				"action": "Onboard PNF*"
+			},
+			{
+				"item": "Batteries",
+				"action": "On & Checked PNF"
+			},
+			{
+				"item": "Main Bus Tie",
+				"action": "Tie PNF"
+			},
+			{
+				"item": "DC External Power/APU",
+				"action": "On PNF"
+			},
+			{
+				"item": "Battery Temps",
+				"action": "Checked PNF"
+			},
+			{
+				"item": "Bus Voltages",
+				"action": "Checked PNF*"
+			},
+			{
+				"item": "Safety Equipment",
+				"action": "Checked PNF*"
+			},
+			{
+				"item": "Landing Gear Lights & Pins",
+				"action": "Checked 3 PNF*"
+			},
+			{
+				"item": "Engine Intake Doors",
+				"action": "Green PNF*"
+			},
+			{
+				"item": "Circuit Breakers",
+				"action": "Checked In PNF"
+			},
+			{
+				"item": "Alt Gear Door, Inhibit Switch",
+				"action": "Norm PNF*"
+			},
+			{
+				"item": "Fire and Smoke Detection",
+				"action": "Tested PNF*"
+			},
+			{
+				"item": "Bleed Air",
+				"action": "Off PNF"
+			},
+			{
+				"item": "APU Bleeds",
+				"action": "As Required PNF"
+			},
+			{
+				"item": "Recirc Fan",
+				"action": "On PNF*"
+			},
+			{
+				"item": "Pressurization",
+				"action": "Set & Checked PNF"
+			},
+			{
+				"item": "Packs",
+				"action": "Checked PNF*"
+			},
+			{
+				"item": "Emergency Lights",
+				"action": "Armed PNF"
+			},
+			{
+				"item": "Fuel Transfer, Quantity",
+				"action": "Off, __L/__R PNF"
+			},
+			{
+				"item": "Parking Brake, Pressure",
+				"action": "On & Checked PNF"
+			},
+			{
+				"item": "Power and Condition Levers",
+				"action": "Disc, Fuel Off PNF"
+			},
+			{
+				"item": "Nose Steering",
+				"action": "Off PNF"
+			},
+			{
+				"item": "FMS",
+				"action": "Set PNF"
+			},
+			{
+				"item": "Takeoff and Departure Briefing",
+				"action": "Completed PNF"
+			}
+
+		]
+	},
+
+	"2": {
+		"name": "Start",
+		"steps": [
+			{
+				"item": "Trims",
+				"action": "3 Units Set F/O"
+			},
+			{
+				"item": "Doors and Fueling Lights",
+				"action": "Out F/O"
+			},
+			{
+				"item": "Passenger Signs",
+				"action": "On F/O"
+			},
+			{
+				"item": "Cabin Report",
+				"action": "Received F/O"
+			},
+			{
+				"item": "Flight Deck Door",
+				"action": "Locked F/O"
+			},
+			{
+				"item": "Anti-Collision",
+				"action": "Red F/O"
+			},
+			{
+				"item": "APU Bleed",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Battery Master",
+				"action": "On, __volts F/O"
+			}
+		]
+	}, 
+
+	"3": {
+		"name": "After Start",
+		"steps": [
+			{
+				"item": "External Power/APU",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Main Bus Tie",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Electrical Panels",
+				"action": "Checked F/O"
+			},
+			{
+				"item": "Condition Levers",
+				"action": "Max F/O"
+			},
+			{
+				"item": "Autofeather",
+				"action": "Selected F/O"
+			},
+			{
+				"item": "Fuel Pumps",
+				"action": "On F/O"
+			},
+			{
+				"item": "Hydraulics",
+				"action": "On, Normal Indication F/O"
+			},
+			{
+				"item": "Flaps & Speeds",
+				"action": "XCheck & Checked F/O"
+			},
+			{
+				"item": "Rudder",
+				"action": "Full Travel F/O"
+			},
+			{
+				"item": "Nose Steering",
+				"action": "On F/O"
+			},
+			{
+				"item": "PFD MFD ED",
+				"action": "Checked F/O"
+			},
+			{
+				"item": "Bleeds",
+				"action": "On/Minimum F/O"
+			},
+			{
+				"item": "DE-ICE Pressure",
+				"action": "Checked F/O"
+			},
+			{
+				"item": "Ice Protection",
+				"action": "Test/Set F/O"
+			},
+			{
+				"item": "XPDR, TCAS",
+				"action": "Alt, On F/O"
+			}
+		]
+	},
+
+	"4": {
+		"name": "Taxi",
+		"steps": [
+			{
+				"item": "Brakes",
+				"action": "Checked F/O"
+			},
+			{
+				"item": "Takeoff Warning",
+				"action": "Tested F/O"
+			},
+			{
+				"item": "Takeoff Power",
+				"action": "NTOP Or RDC F/O"
+			},
+			{
+				"item": "Flight Instruments",
+				"action": "Checked F/O"
+			},
+			{
+				"item": "Hydraulic #3 Full Travel",
+				"action": "Full Travel F/O"
+			},
+			{
+				"item": "Yaw Damper",
+				"action": "On F/O"
+			},
+			{
+				"item": "Clearances",
+				"action": "Received PF"
+			},
+			{
+				"item": "Cabin Clear",
+				"action": "Received PNF"
+			}
+		]
+	},
+
+	"5": {
+		"name": "Before Takeoff",
+		"steps": [
+			{
+				"item": "Anti-Collision",
+				"action": "White F/O"
+			},
+			{
+				"item": "Landing Lights",
+				"action": "On F/O"
+			},
+			{
+				"item": "Pitot/Static Isolation Valve",
+				"action": "On F/O"
+			},
+			{
+				"item": "Bleeds",
+				"action": "As Required F/O"
+			},
+			{
+				"item": "GA, HDG, ALTSEL",
+				"action": "Set & Checked F/O"
+			},
+			{
+				"item": "Caution Panel and Warning Lights",
+				"action": "Clear F/O"
+			}
+		]
+	},
+
+	"6": {
+		"name": "After Takeoff",
+		"steps": [
+			{
+				"item": "Landing Gear",
+				"action": "Up PNF"
+			},
+			{
+				"item": "Flaps",
+				"action": "0 PNF"
+			},
+			{
+				"item": "Bleeds",
+				"action": "On/Normal PNF"
+			},
+			{
+				"item": "Climb Power",
+				"action": "Set PNF"
+			}
+		]
+	},
+	
+	"7": {
+		"name": "Climb",
+		"steps": [
+			{
+				"item": "Altimeters",
+				"action": "Std/__hPa PF & PNF"
+			},
+			{
+				"item": "Ice Protection",
+				"action": "As Required PNF"
+			},
+			{
+				"item": "Pressurization",
+				"action": "Checked PNF"
+			},
+			{
+				"item": "STBY HYD, PTU",
+				"action": "Normal PNF"
+			},
+			{
+				"item": "Fuel Pumps",
+				"action": "Off PNF"
+			},
+			{
+				"item": "Auto Feather",
+				"action": "Off PNF"
+			}
+		]
+	},
+
+	"8": {
+		"name": "Descent",
+		"steps": [
+			{
+				"item": "Pressurization",
+				"action": "Set PNF"
+			},
+			{
+				"item": "GPWS Flaps",
+				"action": "As Required PNF"
+			},
+			{
+				"item": "Briefing, MSA, Speeds, DH/MDA",
+				"action": "Table/Set PNF"
+			}
+		]
+	},
+
+	"9": {
+		"name": "Approach",
+		"steps": [
+			{
+				"item": "Altimeters",
+				"action": "Std/__hPa PF & PNF"
+			},
+			{
+				"item": "Fuel Transfer",
+				"action": "Off PNF"
+			},
+			{
+				"item": "Fuel Pumps",
+				"action": "On PNF"
+			},
+			{
+				"item": "STBY HYD, PTU",
+				"action": "On PNF"
+			},
+			{
+				"item": "Hydraulics",
+				"action": "On, Normal Indication PNF"
+			},
+			{
+				"item": "Passenger Signs",
+				"action": "On PNF"
+			},
+			{
+				"item": "Caution and Warning Lights",
+				"action": "Clear PNF"
+			},
+			{
+				"item": "Cabin Clear",
+				"action": "Received PNF"
+			}
+		]
+	},
+
+	"10": {
+		"name": "Landing",
+		"steps": [
+			{
+				"item": "Ice Protection",
+				"action": "As Required PNF"
+			},
+			{
+				"item": "Landing Gear",
+				"action": "Down 3 Green PF"
+			},
+			{
+				"item": "Condition Levers",
+				"action": "1050 or Max PNF"
+			},
+			{
+				"item": "Flaps",
+				"action": "Set & Checked PF"
+			},
+			{
+				"item": "Bleeds",
+				"action": "Min/As Required PNF"
+			}
+		]
+	},
+
+	"11": {
+		"name": "After Landing",
+		"steps": [
+			{
+				"item": "Control Lock",
+				"action": "On F/O"
+			},
+			{
+				"item": "Anti-Collision",
+				"action": "Red F/O"
+			},
+			{
+				"item": "Flaps",
+				"action": "0 F/O"
+			},
+			{
+				"item": "Weather Radar",
+				"action": "Standby F/O"
+			},
+			{
+				"item": "Fuel Pumps",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Flight/Taxi",
+				"action": "Taxi F/O"
+			},
+			{
+				"item": "Ice Protection",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Main Bus Tie",
+				"action": "Tie F/O"
+			},
+			{
+				"item": "Yaw Damper",
+				"action": "Off F/O"
+			}
+		]
+	},
+
+	"12": {
+		"name": "Shutdown",
+		"steps": [
+			{
+				"item": "Park Brake",
+				"action": "On F/O"
+			},
+			{
+				"item": "HYD Pump/PTU",
+				"action": "Normal F/O"
+			},
+			{
+				"item": "Power and Condition Levers",
+				"action": "Disc/Start & Feather F/O"
+			},
+			{
+				"item": "Nose Steering",
+				"action": "Off F/O"
+			},
+			{
+				"item": "WXR",
+				"action": "Off F/O"
+			},
+			{
+				"item": "XPDR/TCAS",
+				"action": "Standby F/O"
+			},
+			{
+				"item": "Bleeds",
+				"action": "Minimum/Off F/O"
+			},
+			{
+				"item": "GPU/APU",
+				"action": "As Required F/O"
+			},
+			{
+				"item": "Condition Levers",
+				"action": "Fuel Off F/O"
+			},
+			{
+				"item": "Passenger Signs",
+				"action": "Off F/O"
+			},
+			{
+				"item": "Lights",
+				"action": "As Required F/O"
+			},
+			{
+				"item": "Battery Master",
+				"action": "As Required F/O"
+			}
+		]
+	}
+}
