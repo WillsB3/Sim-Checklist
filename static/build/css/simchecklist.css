@@ -410,18 +410,45 @@ th {
 
 html,
 body {
+  -webkit-font-smoothing: antialiased;
+  font-size: 87.5%;
   height: 100%;
   margin: 0;
   padding: 0; }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  padding: 1em; }
+  font-family: 'Roboto', sans-serif; }
 
+.app-header {
+  background-color: #3f51b5; }
+
+.app-header__title {
+  font-size: 20px;
+  font-size: 1.42857rem;
+  color: #fff;
+  font-weight: normal;
+  position: relative; }
+  .app-header__title:before {
+    background-image: url("/static/assets/icons/checkmark-white.svg");
+    background-repeat: no-repeat;
+    background-size: 18px;
+    content: "";
+    height: 18px;
+    position: absolute;
+    left: -18px;
+    margin-left: -0.25em;
+    margin-top: -9px;
+    top: 50%;
+    width: 18px; }
+
+.app-header-content,
 .app-main {
   max-width: 720px;
-  max-width: 45rem;
+  max-width: 51.42857rem;
   margin: 0 auto; }
+
+.app-main-content {
+  margin: 1em; }
 
 .checklist {
   font-weight: 300;

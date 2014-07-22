@@ -16,10 +16,14 @@
 	</head>
 	<body>
 		<header class="app-header">
-			<h1 class="m-inline-block app-header__logo">SimChecklist</h1>
+			<div class="app-header-content">
+				<h1 class="m-inline-block app-header__title">SimChecklist</h1>
+			</div>
 		</header>
 
-		<div ui-view class="app-main"></div>
+		<div class="app-main">
+			<div ui-view class="app-main-content"></div>
+		</div>
 
 		<!-- JavaScript assets -->
 		<script src="{{ STATIC_URL }}bower_components/angular/angular.js"></script>
@@ -28,6 +32,7 @@
 		<script src="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.js"></script>
 
 		<script src="{{ STATIC_URL }}src/app.js"></script>
+		<script src="{{ STATIC_URL }}src/aircraft/aircraft.js"></script>
 		<script src="{{ STATIC_URL }}src/checklist/checklist.js"></script>
 		<script src="{{ STATIC_URL }}src/bootstrap.js"></script>
 

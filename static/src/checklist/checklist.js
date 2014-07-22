@@ -41,6 +41,10 @@
 				});
 
 			console.log($scope.phases);
+		}])
+
+		.factory('Checklist', ['$resource', function ($resource) {
+			return $resource('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json');
 		}]);
 
 }());

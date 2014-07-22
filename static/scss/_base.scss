@@ -4,6 +4,8 @@
 
 html,
 body {
+	-webkit-font-smoothing: antialiased;
+	font-size: 87.5%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -11,10 +13,40 @@ body {
 
 body {
 	font-family: 'Roboto', sans-serif;
-	padding: 1em;
 }
 
+.app-header {
+	background-color: $ui-primary-500;
+}
+
+.app-header__title {
+	@include rem(font-size, 20px);
+	color: #fff;
+	font-weight: normal;
+	position: relative;
+
+	&:before {
+		$size: 18px;
+		background-image: url('/static/assets/icons/checkmark-white.svg');
+		background-repeat: no-repeat;
+		background-size: $size;
+		content: "";
+		height: $size;
+		position: absolute;
+		left: -$size;
+		margin-left: -0.25em;
+		margin-top: -$size/2; 
+		top: 50%;
+		width: $size;
+	}
+}
+
+.app-header-content,
 .app-main {
 	@include rem(max-width, 720px);
 	margin: 0 auto;
+}
+
+.app-main-content {
+	margin: 1em;
 }
