@@ -6,8 +6,20 @@ scss:
   options:
     livereload: false
 
+css: 
+  files:
+    - '<%= build %>/css/<%= package.name %>.css'
+  options: 
+    livereload: true
+
 js:
   files:
     - '<%= js %>/**/*.js'
   tasks:
     - 'copy:javascript'
+
+assets:
+  files:
+    - '<%= assets %>/**/*.*'
+  tasks:
+    - 'copy:assets'

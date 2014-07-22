@@ -7,3 +7,12 @@ javascript:
         - '*'
       dest: 'static/build/js/'
       filter: 'isFile'
+
+assets: 
+    files: 
+    expand: true
+    cwd: 'static/assets/'
+    src: 
+        - '*'
+    dest: 'static/build/assets/'
+    filter: 'isFile'

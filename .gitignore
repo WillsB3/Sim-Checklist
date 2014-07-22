@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 *.py[cod]
 
+.sass-cache/
 node_modules/
 static/bower_components/

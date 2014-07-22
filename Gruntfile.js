@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 	require('load-grunt-config')(grunt, {
 		init: true,
 		data: {
+			assets: 'static/assets',
 			js: 'static/src',
 			scss: 'static/scss',
 			build: 'static/build',
