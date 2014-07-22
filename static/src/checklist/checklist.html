@@ -3,14 +3,21 @@
 <div class="checklist-phase" ng-repeat="phase in phases">
 	<h2 ng-bind="phase.name"></h2>
 	<div class="checklist">
-		<div ng-repeat="step in phase.steps" class="checklist__item">
-			<div class="checklist__item-wrapper">
-				<div class="m-cf">
-					<span ng-bind="$index + 1" class="m-inline-block checklist__item-number"></span>
-					<span ng-bind="step.item" class="m-inline-block checklist__item-name"></span>
-					<span ng-bind="step.action" class="m-inline-block  checklist__item-action"></span>
-				</div>
-			</div>
-		</div>
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr ng-repeat="step in phase.steps" class="checklist__item">
+					<td class="checklist__item-cell checklist__item-cell--number">
+						<span ng-bind="$index + 1" class="checklist__item-number"></span>
+					</td>
+					<td class="checklist__item-cell checklist__item-cell--name">
+						<span ng-bind="step.item" class="checklist__item-name"></span>
+					</td>
+					<td class="checklist__item-cell checklist__item-cell--action">
+						<span ng-bind="step.action" class="checklist__item-action"></span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

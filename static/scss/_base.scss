@@ -13,3 +13,8 @@ body {
 	font-family: 'Roboto', sans-serif;
 	padding: 1em;
 }
+
+.app-main {
+	@include rem(max-width, 720px);
+	margin: 0 auto;
+}

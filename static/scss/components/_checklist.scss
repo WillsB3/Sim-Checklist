@@ -1,59 +1,38 @@
 .checklist { 
-	margin: 0;
+	font-weight: 300;
 	padding: 0;
-	@include rem(max-width, 720px);
+
+	table {
+		width: 100%;
+	}
 }
 
 .checklist__item { 
 	$border: 1px solid #d6d6d6;
 	border: $border;
 	border-bottom-style: none;
-	font-weight: 300;
-	list-style-position: inside;
-	padding: 1em 1em;
 
 	&:last-child {
 		border-bottom: $border;
 	}
 
-	.checklist__item-wrapper {
-		position: relative;
+	@at-root .checklist__item-cell {
+		padding: 1em 1em;
 	}
 
-	.checklist__item-wrapper:after {
-		border-bottom: 1px dotted #000;
-		bottom: 4px;
-		content: " ";
-		display: block;
-		height: 1px;
-		position: absolute;
-		width: 100%;
-		z-index: -1;
-	}
-
-	@at-root
-	.checklist__item-number, 
-	.checklist__item-name, 
-	.checklist__item-action {
-			background-color: #fff;
-			position: relative;
-			z-index: 1;
-	}
-
-	@at-root .checklist__item-number {
+	@at-root .checklist__item-cell--number {
 		color: lighten($primary-text-color, 75%);
-		float: left;
-		padding-right: 1em;
+		width: 1px;
 	}
 
-	@at-root .checklist__item-name {
-		float: left;
-		padding: 0 0.1em 0 0;
+	@at-root .checklist__item-cell--action {
+		text-align: right;
 	}
 
-	@at-root .checklist__item-action {
-		float: right;
-		padding: 0 0 0 0.1em;
+	@at-root 
+	.checklist__item-name,
+	.checklist__item-action {
+		background-color: #fff;
 	}
 }
 
