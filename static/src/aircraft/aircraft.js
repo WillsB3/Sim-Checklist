@@ -31,7 +31,7 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('AircraftListCtrl', ['$scope', , function ($scope, $http) {
+		.controller('AircraftListCtrl', ['$scope', '$http', function ($scope, $http) {
 			$http
 				.get('/static/dummy_data/aircraft/all-aircraft.json')
 				.success(function (data) {

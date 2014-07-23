@@ -411,7 +411,7 @@ th {
 html,
 body {
   -webkit-font-smoothing: antialiased;
-  font-size: 87.5%;
+  font-size: 100%;
   height: 100%;
   margin: 0;
   padding: 0; }
@@ -419,12 +419,20 @@ body {
 body {
   font-family: 'Roboto', sans-serif; }
 
+h1 {
+  font-size: 1.5em; }
+
+.app-container {
+  margin: 0 1em; }
+
 .app-header {
   background-color: #3f51b5; }
 
 .app-header__title {
   font-size: 20px;
-  font-size: 1.42857rem;
+  font-size: 1.25rem;
+  padding-left: 22px;
+  padding-left: 1.375rem;
   color: #fff;
   font-weight: normal;
   position: relative; }
@@ -435,20 +443,19 @@ body {
     content: "";
     height: 18px;
     position: absolute;
-    left: -18px;
-    margin-left: -0.25em;
+    left: 0;
     margin-top: -9px;
     top: 50%;
     width: 18px; }
 
-.app-header-content,
-.app-main {
+.app-main,
+.app-header-content {
   max-width: 720px;
-  max-width: 51.42857rem;
+  max-width: 45rem;
   margin: 0 auto; }
 
-.app-main-content {
-  margin: 1em; }
+.app-main {
+  margin-top: 1em; }
 
 .checklist {
   font-weight: 300;
