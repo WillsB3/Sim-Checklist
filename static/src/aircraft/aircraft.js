@@ -5,7 +5,7 @@
 	// aircraft-list.js
 	// create the feature module
 	// =============================================================================
-	angular.module('checklist.aircraft', ['ui.router'])
+	angular.module('checklist.aircraft', ['ui.router', 'ngResource'])
 		
 		// configure routes
 		// =============================================================================
@@ -35,5 +35,10 @@
 				.success(function (data) {
 					$scope.aircraft = data.aircraft;
 				});
+		}])
+
+		// FIXME: WIP.
+		.factory('Aircraft', ['$resource', function ($resource) {
+			return $resource('/static/dummy_data/aircraft/');
 		}]);
 }());
