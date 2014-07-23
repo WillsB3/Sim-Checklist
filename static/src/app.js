@@ -9,9 +9,10 @@
 
 		// configure routes
 		// =============================================================================
-		.config(function ($stateProvider, $urlRouterProvider) {
+		.config(['$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, cfpLoadingBarProvider) {
+			cfpLoadingBarProvider.includeSpinner = false;
 			$urlRouterProvider.otherwise("/aircraft");
-		})
+		}])
 
 		// application run block
 		// =============================================================================
