@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="{{ STATIC_URL }}build/css/simchecklist.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
 	</head>
-	<body>
+	<body ng-app="checklist">
 		<header class="app-header">
 			<div class="app-header-content">
 				<div class="app-container">
@@ -30,13 +30,13 @@
 		<!-- JavaScript assets -->
 		<script src="{{ STATIC_URL }}bower_components/angular/angular.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular-animate/angular-animate.js"></script>
+		<script src="{{ STATIC_URL }}bower_components/angular-resource/angular-resource.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.js"></script>
 
 		<script src="{{ STATIC_URL }}src/app.js"></script>
 		<script src="{{ STATIC_URL }}src/aircraft/aircraft.js"></script>
 		<script src="{{ STATIC_URL }}src/checklist/checklist.js"></script>
-		<script src="{{ STATIC_URL }}src/bootstrap.js"></script>
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
