@@ -13,14 +13,12 @@
 
 			$stateProvider
 
-				// url will be /map
-				.state('aircraft', {
+				.state('aircraft_list', {
 					url: "/aircraft",
 					templateUrl: "static/src/aircraft/aircraft.html",
 					controller: 'AircraftListCtrl'
 				});
 
-			$urlRouterProvider.otherwise("/aircraft");
 		})
 
 		// module run block

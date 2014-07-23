@@ -7,20 +7,18 @@
 	// =============================================================================
 	angular.module('checklist.detail', ['ui.router'])
 		
-		// configuring our routes 
+		// configure routes 
 		// =============================================================================
 		.config(function ($stateProvider, $urlRouterProvider) {
 
 			$stateProvider
 
-				// url will be /map
-				.state('detail', {
-					url: "/detail",
+				.state('checklist_detail', {
+					url: "/aircraft/:aircraftId/checklist",
 					templateUrl: "static/src/checklist/checklist.html",
 					controller: 'ChecklistDetailCtrl'
 				});
 
-			$urlRouterProvider.otherwise("/detail");
 		})
 
 		// application run block
@@ -31,8 +29,10 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', ['$scope', '$http', function ($scope, $http) {
+		.controller('ChecklistDetailCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
 			var phasesPromises;
+
+			console.info('Aircraft ID: ', $stateParams.aircraftId);
 
 			phasesPromises = $http
 				.get('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json')
