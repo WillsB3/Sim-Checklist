@@ -3,8 +3,8 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework import viewsets, routers
 
-import core.urls
 from core.api import router
+import core.urls
 
 admin.autodiscover()
 
