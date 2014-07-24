@@ -6,19 +6,19 @@ from . import models
 class AircraftSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Aircraft
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'checklists')
 
 
 class ChecklistSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.Checklist
-        fields = ('id', 'aircraft')
+        fields = ('id', 'aircraft', 'phases')
 
 
 class ChecklistPhaseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.ChecklistPhase
-        fields = ('id', 'checklist', 'name')
+        fields = ('id', 'checklist', 'name', 'steps')
 
 
 class ChecklistStepSerializer(serializers.HyperlinkedModelSerializer):
