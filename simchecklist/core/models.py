@@ -14,9 +14,10 @@ class Aircraft(models.Model):
 
 class Checklist(models.Model):
     aircraft = models.ForeignKey(Aircraft, related_name='checklists')
+    name = models.CharField(max_length=200)
 
     def __unicode__(self):
-        return "Checklist for %s" % self.aircraft.name
+        return "{aircraft}: {checklist_name}".format(aircraft=self.aircraft, checklist_name=self.name) 
 
 
 class ChecklistPhase(models.Model):

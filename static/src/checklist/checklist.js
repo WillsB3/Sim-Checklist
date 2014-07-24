@@ -14,7 +14,7 @@
 			$stateProvider
 
 				.state('checklist_detail', {
-					url: "/aircraft/:aircraftId/checklist",
+					url: "/aircraft/:aircraftId/checklist/:checklistId",
 					templateUrl: "static/src/checklist/checklist.html",
 					controller: 'ChecklistDetailCtrl'
 				});
@@ -29,22 +29,29 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+		.controller('ChecklistDetailCtrl', function ($scope, $stateParams, ChecklistService) {
 			var phasesPromises;
 
 			console.info('Aircraft ID: ', $stateParams.aircraftId);
 
-			phasesPromises = $http
-				.get('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json')
-				.success(function (phases) {
-					$scope.phases = phases;
-				});
+			// phasesPromises = $http
+			// 	.get('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json')
+			// 	.success(function (phases) {
+			// 		$scope.phases = phases;
+			// 	});
+
+			ChecklistService.query(function (data) {
+				console.info('checklist data:', data);
+				$scope.phases = data.results;
+			});
 
 			console.log($scope.phases);
-		}])
+		})
 
-		.factory('Checklist', ['$resource', function ($resource) {
-			return $resource('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json');
-		}]);
+		.factory('ChecklistService', function ($resource) {
+			return $resource('/api/checklists', {}, {
+				query: { method: "GET", isArray: false }
+			});
+		});
 
 }());

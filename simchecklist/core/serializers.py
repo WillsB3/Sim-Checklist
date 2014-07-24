@@ -3,25 +3,29 @@ from rest_framework import serializers
 
 from . import models
 
-class AircraftSerializer(serializers.HyperlinkedModelSerializer):
+class AircraftSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Aircraft
         fields = ('id', 'name', 'checklists')
 
 
-class ChecklistSerializer(serializers.HyperlinkedModelSerializer):
+class ChecklistStepSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.Checklist
-        fields = ('id', 'aircraft', 'phases')
+        model = models.ChecklistStep
+        fields = ('checklist_phase', 'item', 'action')
 
 
-class ChecklistPhaseSerializer(serializers.HyperlinkedModelSerializer):
+class ChecklistPhaseSerializer(serializers.ModelSerializer):
+    steps = ChecklistStepSerializer(many=True)
+    
     class Meta:
         model = models.ChecklistPhase
         fields = ('id', 'checklist', 'name', 'steps')
 
 
-class ChecklistStepSerializer(serializers.HyperlinkedModelSerializer):
+class ChecklistSerializer(serializers.ModelSerializer):
+    phases = ChecklistPhaseSerializer(many=True)
+
     class Meta:
-        model = models.ChecklistStep
-        fields = ('checklist_phase', 'item', 'action')
+        model = models.Checklist
+        fields = ('id', 'aircraft', 'name', 'phases')

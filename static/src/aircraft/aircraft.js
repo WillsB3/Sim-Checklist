@@ -29,16 +29,16 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('AircraftListCtrl', ['$scope', '$http', function ($scope, $http) {
-			$http
-				.get('/static/dummy_data/aircraft/all-aircraft.json')
-				.success(function (data) {
-					$scope.aircraft = data.aircraft;
-				});
-		}])
+		.controller('AircraftListCtrl', function ($scope, $http, AircraftService) {
+			AircraftService.query(function (data) {
+				console.info('aircraft data:', data);
+				$scope.aircraft = data.results;
+			});
+		})
 
-		// FIXME: WIP.
-		.factory('Aircraft', ['$resource', function ($resource) {
-			return $resource('/static/dummy_data/aircraft/');
-		}]);
+		.factory('AircraftService', function ($resource) {
+			return $resource('/api/aircraft/:aircraftId', {}, {
+				query: { method: "GET", isArray: false }
+			});
+		});
 }());

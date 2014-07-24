@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from nested_inline.admin import NestedStackedInline, NestedModelAdmin, NestedTabularInline
+from nested_inlines.admin import NestedModelAdmin, NestedStackedInline, NestedTabularInline
 
 from . import models
 

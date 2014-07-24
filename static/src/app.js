@@ -5,7 +5,14 @@
 	// app.js
 	// create our angular app and inject dependencies
 	// =============================================================================
-	angular.module('checklist', ['checklist.aircraft', 'checklist.detail', 'angular-loading-bar', 'ngAnimate', 'ui.router'])
+	angular.module('checklist', [
+			'checklist.aircraft',
+			'checklist.checklists',
+			'checklist.detail',
+			'angular-loading-bar',
+			'ngAnimate',
+			'ui.router'
+		])
 
 		// configure routes
 		// =============================================================================

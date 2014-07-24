@@ -1,6 +1,7 @@
 Django==1.6.5
+South==1.0
 django-debug-toolbar==1.2.1
--e git://github.com/s-block/django-nested-inline.git@adbe4d2d821a881ed745ab398794045eccd01f4c#egg=django_nested_inline-master
+-e git+git://github.com/silverfix/django-nested-inlines.git#egg=django-nested-inlines
 djangorestframework==2.3.13
 sqlparse==0.1.11
 wsgiref==0.1.2

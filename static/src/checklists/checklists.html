@@ -1,0 +1,7 @@
+<h1>Available Aircraft</h1>
+
+<ul>
+	<li ng-repeat="checklist in checklists">
+		<a ng-href="/#/aircraft/{{aircraft.id}}/checklist/{{checklist.id}}" ng-bind="checklist.name"></a>
+	</li>
+</ul>
