@@ -1,0 +1,7 @@
+target:
+  ignorePath: '../../static/'
+  src: 'templates/core/base.html'
+  fileTypes:
+    html:
+      replace:
+        js: '<script src="{{ STATIC_URL }}{{filePath}}"></script>'

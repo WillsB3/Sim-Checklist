@@ -5,7 +5,7 @@
 	// app.js
 	// create our angular app and inject dependencies
 	// =============================================================================
-	angular.module('checklist.detail', ['ui.router'])
+	angular.module('checklist.detail', ['ui.router', 'checklist.common.services'])
 		
 		// configure routes 
 		// =============================================================================
@@ -30,28 +30,15 @@
 		// our controller for the map
 		// =============================================================================
 		.controller('ChecklistDetailCtrl', function ($scope, $stateParams, ChecklistService) {
-			var phasesPromises;
 
 			console.info('Aircraft ID: ', $stateParams.aircraftId);
+			console.info('Checklist ID: ', $stateParams.checklistId);
 
-			// phasesPromises = $http
-			// 	.get('/static/dummy_data/aircraft/4/checklists/airline2sim-checklist.json')
-			// 	.success(function (phases) {
-			// 		$scope.phases = phases;
-			// 	});
-
-			ChecklistService.query(function (data) {
+			ChecklistService.get({ id: $stateParams.checklistId }, function (data) {
 				console.info('checklist data:', data);
-				$scope.phases = data.results;
+				$scope.checklist = data;
 			});
 
-			console.log($scope.phases);
-		})
-
-		.factory('ChecklistService', function ($resource) {
-			return $resource('/api/checklists', {}, {
-				query: { method: "GET", isArray: false }
-			});
 		});
 
 }());

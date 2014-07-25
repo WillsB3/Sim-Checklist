@@ -18,7 +18,7 @@
 		<header class="app-header">
 			<div class="app-header-content">
 				<div class="app-container">
-					<h1 class="m-inline-block app-header__title">SimChecklist</h1>
+					<h1 class="m-inline-block app-header__title"><a ui-sref="aircraft_list">SimChecklist</a></h1>
 				</div>
 			</div>
 		</header>
@@ -28,13 +28,22 @@
 		</div>
 
 		<!-- JavaScript assets -->
+		<!-- bower:js -->
+		<script src="{{ STATIC_URL }}bower_components/modernizr/modernizr.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular/angular.js"></script>
-		<script src="{{ STATIC_URL }}bower_components/angular-animate/angular-animate.js"></script>
-		<script src="{{ STATIC_URL }}bower_components/angular-resource/angular-resource.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.js"></script>
+		<script src="{{ STATIC_URL }}bower_components/angular-animate/angular-animate.js"></script>
+		<script src="{{ STATIC_URL }}bower_components/angular-resource/angular-resource.js"></script>
+		<!-- endbower -->
 
+		<!-- Angular App module -->
 		<script src="{{ STATIC_URL }}src/app.js"></script>
+
+		<!-- Angular common -->
+		<script src="{{ STATIC_URL }}src/common/services/checklistService.js"></script>
+
+		<!-- Angular application feature modules -->
 		<script src="{{ STATIC_URL }}src/aircraft/aircraft.js"></script>
 		<script src="{{ STATIC_URL }}src/checklists/checklists.js"></script>
 		<script src="{{ STATIC_URL }}src/checklist/checklist.js"></script>

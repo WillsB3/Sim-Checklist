@@ -31,9 +31,13 @@ h1 {
 	$iconsize: 18px;
 	@include rem(font-size, 20px);
 	@include rem(padding-left, $iconsize + 4px);
-	color: #fff;
 	font-weight: normal;
 	position: relative;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
 
 	&:before {
 		background-image: url('/static/assets/icons/checkmark-white.svg');

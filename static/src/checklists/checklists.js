@@ -5,7 +5,7 @@
 	// app.js
 	// create our angular app and inject dependencies
 	// =============================================================================
-	angular.module('checklist.checklists', ['ui.router'])
+	angular.module('checklist.checklists', ['ui.router', 'checklist.common.services'])
 		
 		// configure routes 
 		// =============================================================================
@@ -39,12 +39,6 @@
 			ChecklistService.query({ 'aircraft': aircraftId }, function (data) {
 				console.info('checklists for aircraft id: ', aircraftId, data);
 				$scope.checklists = data.results;
-			});
-		})
-
-		.factory('ChecklistService', function ($resource) {
-			return $resource('/api/checklists', {}, {
-				query: { method: "GET", isArray: false }
 			});
 		});
 

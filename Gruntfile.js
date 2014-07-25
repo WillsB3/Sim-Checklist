@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 	// Register tasks
 	grunt.registerTask('build', [
 		'clean:build',
+		'wiredep',
 		'sass',
 		'copy:javascript',
 		'modernizr'
