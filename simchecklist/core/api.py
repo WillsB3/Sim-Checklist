@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from rest_framework import viewsets, routers
+from rest_framework import viewsets, routers, filters
 
 from . import models
 from . import serializers
@@ -15,6 +15,7 @@ class AircraftViewSet(viewsets.ModelViewSet):
 class ChecklistViewSet(viewsets.ModelViewSet):
 	model = models.Checklist
 	serializer_class = serializers.ChecklistSerializer
+	filter_fields = ('aircraft',)
 
 class ChecklistPhaseViewSet(viewsets.ModelViewSet):
 	model = models.ChecklistPhase
