@@ -2,12 +2,11 @@
 
 	'use strict';
 
-	// app.js
-	// create our angular app and inject dependencies
+	// checklists page
 	// =============================================================================
 	angular.module('checklist.checklists', ['ui.router', 'checklist.common.services'])
-		
-		// configure routes 
+
+		// configure routes
 		// =============================================================================
 		.config(function ($stateProvider, $urlRouterProvider) {
 

@@ -2,8 +2,7 @@
 
 	'use strict';
 
-	// app.js
-	// create our angular app and inject dependencies
+	// checklist detail page
 	// =============================================================================
 	angular.module('checklist.detail', ['ui.router', 'checklist.common.services', 'LocalStorageModule'])
 
@@ -40,26 +39,48 @@
 		// =============================================================================
 		.controller('ChecklistDetailCtrl', function ($scope, $stateParams, ChecklistService, ChecklistRunService, STATES, STATE_ORDER) {
 
-			console.info('Aircraft ID: ', $stateParams.aircraftId);
-			console.info('Checklist ID: ', $stateParams.checklistId);
+			// Scope properties
+			// =============================
+			$scope.checklist = null;
+			$scope.run = null;
 
-			ChecklistService.get({ id: $stateParams.checklistId }, function (checklistData) {
-				$scope.checklist = checklistData;
-				$scope.run = ChecklistRunService.newRun(checklistData);
+			// Scope watchers
+			// =============================
+			$scope.$watch('run', onRunDataModified, true);
 
-				console.info('checklist data:', checklistData);
-				console.warn('run data:', $scope.run);
-			});
+			// Controller functions
+			// =============================
+			function onRunDataModified (newValue, oldValue) {
+				if (newValue) {
+					ChecklistRunService.saveRun(newValue);
+				}
+			}
 
-			$scope.toggleState = function (stateObject) {
+			function toggleStepState (stateObject) {
 				var stateKey = _.findKey(STATES, function (value, key) { return value === stateObject.state; });
 				var currentIndex = STATE_ORDER.indexOf(stateKey);
 				var nextIndex = currentIndex + 1;
 
 				nextIndex = nextIndex % STATE_ORDER.length;
 				stateObject.state = STATES[STATE_ORDER[nextIndex]];
-			};
+			}
 
+			ChecklistService.get({ id: $stateParams.checklistId }, function (checklistData) {
+
+				var run = ChecklistRunService.getRun(checklistData.id);
+				if (!run) {
+					run = ChecklistRunService.newRun(checklistData);
+				}
+
+				$scope.checklist = checklistData;
+				$scope.run = run;
+
+			});
+
+			// Publish selected controller
+			// functions to scope API.
+			// =============================
+			$scope.toggleState = toggleStepState;
 		})
 
 		.service('ChecklistRunService', function checklistRunService(localStorageService, STATES) {
@@ -68,6 +89,7 @@
 
 			service.newRun = function (checklistData) {
 				var run = {
+					checklistId: checklistData.id,
 					id: Date.now(),
 					phases: []
 				};
@@ -101,8 +123,8 @@
 				}
 			};
 
-			service.saveRun = function (checklistId, run) {
-				return localStorageService.set('checklist-run:' + checklistId, angular.toJson(run));
+			service.saveRun = function (runData) {
+				return localStorageService.set('checklist-run:' + runData.checklistId, angular.toJson(runData));
 			};
 
 			return service;
