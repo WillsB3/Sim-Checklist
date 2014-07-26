@@ -1,4 +1,4 @@
-.checklist { 
+.checklist {
 	font-weight: 300;
 	padding: 0;
 
@@ -7,7 +7,7 @@
 	}
 }
 
-.checklist__item { 
+.checklist__item {
 	$border: 1px solid #d6d6d6;
 	border: $border;
 	border-bottom-style: none;
@@ -29,10 +29,42 @@
 		text-align: right;
 	}
 
-	@at-root 
+	@at-root .checklist__item-cell--buttons {
+		padding-left: 0;
+		width: 42px;
+	}
+
+	@at-root
 	.checklist__item-name,
 	.checklist__item-action {
 		background-color: #fff;
 	}
 }
 
+.btn-checklist-state {
+	$size: 42px;
+	background: {
+		color: transparent;
+		position: 50%;
+		size: $size;
+	};
+	border: none;
+	height: $size;
+	width: $size;
+}
+
+.btn-checklist-state--initial {
+	background-image: url('/static/assets/icons/initial.svg');
+}
+
+.btn-checklist-state--checked {
+	background-image: url('/static/assets/icons/check.svg');
+}
+
+.btn-checklist-state--skipped {
+	background-image: url('/static/assets/icons/skip.svg');
+}
+
+.btn-checklist-state--failed {
+	background-image: url('/static/assets/icons/fail.svg');
+}

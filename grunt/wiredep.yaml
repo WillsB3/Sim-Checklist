@@ -5,3 +5,6 @@ target:
     html:
       replace:
         js: '<script src="{{ STATIC_URL }}{{filePath}}"></script>'
+  overrides:
+    lodash:
+      main: 'dist/lodash.js'

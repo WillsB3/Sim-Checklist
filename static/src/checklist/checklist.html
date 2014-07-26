@@ -16,6 +16,9 @@
 					<td class="checklist__item-cell checklist__item-cell--action">
 						<span ng-bind="step.action" class="checklist__item-action"></span>
 					</td>
+					<td class="checklist__item-cell checklist__item-cell--buttons">
+						<button class="btn-checklist-state" ng-class="'btn-checklist-state--' + run.phases[$parent.$index].steps[$index].state" ng-click="toggleState(run.phases[$parent.$index].steps[$index])"></button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
