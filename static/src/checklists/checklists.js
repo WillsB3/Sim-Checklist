@@ -12,7 +12,7 @@
 
 			$stateProvider
 
-				.state('checklist_list', {
+				.state('checklist-list', {
 					url: "/aircraft/:aircraftId/checklists",
 					templateUrl: "static/src/checklists/checklists.html",
 					controller: 'ChecklistListCtrl'

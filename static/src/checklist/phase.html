@@ -1,0 +1,25 @@
+<div class="checklist-phase">
+	<h2 ng-bind="phase.name"></h2>
+	<div class="checklist">
+		<table>
+			<thead></thead>
+			<tbody>
+				<tr ng-repeat="step in phase.steps" class="checklist__item">
+					<td class="checklist__item-cell checklist__item-cell--number">
+						<span ng-bind="$index + 1" class="checklist__item-number"></span>
+					</td>
+					<td class="checklist__item-cell checklist__item-cell--name">
+						<span ng-bind="step.item" class="checklist__item-name"></span>
+					</td>
+					<td class="checklist__item-cell checklist__item-cell--action">
+						<span ng-bind="step.action" class="checklist__item-action"></span>
+					</td>
+					<td class="checklist__item-cell checklist__item-cell--buttons">
+						<button class="btn-checklist-state" ng-class="'btn-checklist-state--' + run.phases[$parent.$index].steps[$index].state" ng-click="toggleState(run.phases[$parent.$index].steps[$index])"></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<a ui-sref="checklist-phase({ phaseName: nextPhaseSlug })">SimChecklist</a>
+</div>

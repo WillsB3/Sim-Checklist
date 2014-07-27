@@ -9,6 +9,7 @@
 			'checklist.aircraft',
 			'checklist.checklists',
 			'checklist.detail',
+			'checklist.phase',
 			'angular-loading-bar',
 			'ngAnimate',
 			'ui.router'

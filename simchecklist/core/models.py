@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import AbstractUser, UserManager
 
 class Aircraft(models.Model):
@@ -17,15 +18,20 @@ class Checklist(models.Model):
     name = models.CharField(max_length=200)
 
     def __unicode__(self):
-        return "{aircraft}: {checklist_name}".format(aircraft=self.aircraft, checklist_name=self.name) 
+        return "{aircraft}: {checklist_name}".format(aircraft=self.aircraft, checklist_name=self.name)
 
 
 class ChecklistPhase(models.Model):
     checklist = models.ForeignKey(Checklist, related_name='phases')
     name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, null=True, blank=True)
 
     def __unicode__(self):
         return self.name
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(ChecklistPhase, self).save(*args, **kwargs)
 
 
 class ChecklistStep(models.Model):

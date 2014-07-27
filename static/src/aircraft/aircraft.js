@@ -6,16 +6,16 @@
 	// create the feature module
 	// =============================================================================
 	angular.module('checklist.aircraft', ['ui.router', 'ngResource'])
-		
+
 		// configure routes
 		// =============================================================================
 		.config(function ($stateProvider, $urlRouterProvider) {
 
 			$stateProvider
 
-				.state('aircraft_list', {
-					url: "/aircraft",
-					templateUrl: "static/src/aircraft/aircraft.html",
+				.state('aircraft-list', {
+					url: '/aircraft',
+					templateUrl: 'static/src/aircraft/aircraft.html',
 					controller: 'AircraftListCtrl'
 				});
 

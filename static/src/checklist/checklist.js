@@ -21,10 +21,26 @@
 
 			$stateProvider
 
-				.state('checklist_detail', {
-					url: "/aircraft/:aircraftId/checklist/:checklistId",
-					templateUrl: "static/src/checklist/checklist.html",
-					controller: 'ChecklistDetailCtrl'
+				.state('checklist-detail', {
+					url: '/aircraft/:aircraftId/checklist/:checklistId',
+					templateUrl: 'static/src/checklist/checklist.html',
+					controller: 'ChecklistDetailCtrl',
+					resolve: {
+						checklistData: function($stateParams, ChecklistService) {
+							console.info('fetching checklist data...');
+							return ChecklistService.get({ id: $stateParams.checklistId }).$promise;
+						},
+						runData: function($stateParams, $q, checklistData, ChecklistRunService) {
+							console.info('fetching checklist run data...');
+
+							var run = ChecklistRunService.getRun(checklistData.id);
+
+							if (!run) {
+								run = ChecklistRunService.newRun(checklistData);
+							}
+							return run;
+						}
+					}
 				});
 
 		})
@@ -37,16 +53,24 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', function ($scope, $stateParams, ChecklistService, ChecklistRunService, STATES, STATE_ORDER) {
+		.controller('ChecklistDetailCtrl', function ($scope, $state, $stateParams, checklistData, runData, ChecklistRunService, STATES, STATE_ORDER, slugify) {
 
+			console.info('ChecklistDetailCtrl');
 			// Scope properties
 			// =============================
-			$scope.checklist = null;
-			$scope.run = null;
+			$scope.checklist = checklistData;
+			$scope.run = runData;
 
 			// Scope watchers
 			// =============================
 			$scope.$watch('run', onRunDataModified, true);
+
+			// Go to the first phase by default
+			$state.go('checklist-phase', {
+				phaseName: slugify(checklistData.phases[0].name)
+			}, {
+				location: 'replace'
+			});
 
 			// Controller functions
 			// =============================
@@ -64,18 +88,6 @@
 				nextIndex = nextIndex % STATE_ORDER.length;
 				stateObject.state = STATES[STATE_ORDER[nextIndex]];
 			}
-
-			ChecklistService.get({ id: $stateParams.checklistId }, function (checklistData) {
-
-				var run = ChecklistRunService.getRun(checklistData.id);
-				if (!run) {
-					run = ChecklistRunService.newRun(checklistData);
-				}
-
-				$scope.checklist = checklistData;
-				$scope.run = run;
-
-			});
 
 			// Publish selected controller
 			// functions to scope API.
