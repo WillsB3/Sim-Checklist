@@ -16,6 +16,7 @@ class ChecklistPhaseInline(NestedStackedInline):
     extra = 1
     fk_name = 'checklist'
     inlines = [ChecklistStepInline]
+    exclude = ('slug',)
 
 
 class ChecklistAdmin(NestedModelAdmin):

@@ -14,16 +14,14 @@
 
 				.state('checklist-phase', {
 					parent: 'checklist-detail',
-					url: '/phases/:phaseName',
+					url: '/phases/:phaseSlug',
 					templateUrl: 'static/src/checklist/phase.html',
 					controller: 'ChecklistPhaseCtrl',
 					resolve: {
-						phaseData: function ($stateParams, checklistData, slugify) {
-							var phaseNameSlug = slugify($stateParams.phaseName);
+						phaseData: function ($stateParams, checklistData) {
 							var phase = _.find(checklistData.phases, function (value) {
-								return slugify(value.name) === phaseNameSlug;
+								return value.slug === $stateParams.phaseSlug;
 							});
-
 							return phase;
 						}
 					}
@@ -39,7 +37,7 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseData, slugify) {
+		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseData) {
 
 			function getNextPhaseSlug() {
 				var currentPhaseIndex;
@@ -54,16 +52,16 @@
 
 				nextPhaseIndex = currentPhaseIndex + 1;
 
-				if (currentPhaseIndex >= numPhases) {
+				if (currentPhaseIndex === numPhases - 1) {
 					return;
 				}
 
 				nextPhaseConfig = $scope.checklist.phases[nextPhaseIndex];
 
-				return slugify(nextPhaseConfig.name);
+				return nextPhaseConfig.slug;
 			}
 
-			console.info('ChecklistPhaseCtrl', $stateParams.phaseName);
+			console.info('ChecklistPhaseCtrl', $stateParams.phaseSlug);
 
 			// If this state was activated without a specific phase parameter
 			// supplied we can't do anything. Automatically redirect to the
@@ -71,7 +69,7 @@
 			if (!phaseData) {
 				// Go to the first phase by default
 				$state.go('checklist-phase', {
-					phaseName: slugify(checklistData.phases[0].name)
+					phaseSlug: checklistData.phases[0].slug
 				}, {
 					location: 'replace'
 				});

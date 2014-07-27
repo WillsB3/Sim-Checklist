@@ -2,6 +2,6 @@
 
 <ul>
 	<li ng-repeat="checklist in checklists">
-		<a ng-href="/#/aircraft/{{checklist.aircraft}}/checklist/{{checklist.id}}/phases/{{checklist.phases[0].slug}}" ng-bind="checklist.name"></a>
+		<a ui-sref="checklist-phase({ aircraftId: checklist.aircraft, checklistId: checklist.id, phaseSlug: checklist.phases[0].slug })" ui-sref-opts="{ location: true }" ng-bind="checklist.name"></a>
 	</li>
 </ul>

@@ -30,7 +30,7 @@
 							console.info('fetching checklist data...');
 							return ChecklistService.get({ id: $stateParams.checklistId }).$promise;
 						},
-						runData: function($stateParams, $q, checklistData, ChecklistRunService) {
+						runData: function(checklistData, ChecklistRunService) {
 							console.info('fetching checklist run data...');
 
 							var run = ChecklistRunService.getRun(checklistData.id);
@@ -53,9 +53,10 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', function ($scope, $state, $stateParams, checklistData, runData, ChecklistRunService, STATES, STATE_ORDER, slugify) {
+		.controller('ChecklistDetailCtrl', function ($scope, $state, checklistData, runData, ChecklistRunService, STATES, STATE_ORDER) {
 
 			console.info('ChecklistDetailCtrl');
+
 			// Scope properties
 			// =============================
 			$scope.checklist = checklistData;
@@ -64,10 +65,9 @@
 			// Scope watchers
 			// =============================
 			$scope.$watch('run', onRunDataModified, true);
-
 			// Go to the first phase by default
 			$state.go('checklist-phase', {
-				phaseName: slugify(checklistData.phases[0].name)
+				phaseSlug: checklistData.phases[0].slug
 			}, {
 				location: 'replace'
 			});

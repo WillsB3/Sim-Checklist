@@ -17,10 +17,10 @@ class ChecklistStepSerializer(serializers.ModelSerializer):
 
 class ChecklistPhaseSerializer(serializers.ModelSerializer):
     steps = ChecklistStepSerializer(many=True)
-    
+
     class Meta:
         model = models.ChecklistPhase
-        fields = ('id', 'checklist', 'name', 'steps')
+        fields = ('id', 'checklist', 'name', 'slug', 'steps')
 
 
 class ChecklistSerializer(serializers.ModelSerializer):
