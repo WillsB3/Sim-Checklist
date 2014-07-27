@@ -39,6 +39,28 @@
 		// =============================================================================
 		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseData) {
 
+			function getPrevPhaseSlug() {
+				var currentPhaseIndex;
+				var nextPhaseConfig;
+				var nextPhaseIndex;
+				var nextPhaseSlug;
+				var numPhases = $scope.checklist.phases.length;
+
+				currentPhaseIndex = _.findIndex($scope.checklist.phases, function (phase) {
+					return phase.id === $scope.phase.id;
+				});
+
+				nextPhaseIndex = currentPhaseIndex - 1;
+
+				if (currentPhaseIndex === 0) {
+					return;
+				}
+
+				nextPhaseConfig = $scope.checklist.phases[nextPhaseIndex];
+
+				return nextPhaseConfig.slug;
+			}
+
 			function getNextPhaseSlug() {
 				var currentPhaseIndex;
 				var nextPhaseConfig;
@@ -78,6 +100,7 @@
 			}
 
 			$scope.phase = phaseData;
+			$scope.prevPhaseSlug = getPrevPhaseSlug();
 			$scope.nextPhaseSlug = getNextPhaseSlug();
 
 		});
