@@ -65,12 +65,6 @@
 			// Scope watchers
 			// =============================
 			$scope.$watch('run', onRunDataModified, true);
-			// Go to the first phase by default
-			$state.go('checklist-phase', {
-				phaseSlug: checklistData.phases[0].slug
-			}, {
-				location: 'replace'
-			});
 
 			// Controller functions
 			// =============================
