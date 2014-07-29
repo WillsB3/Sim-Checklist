@@ -41,7 +41,11 @@
 	}
 
 	@at-root .checklist__item-cell--buttons {
-		padding-left: 0;
+		padding {
+			bottom: 0.75em;
+			left: 0;
+			top: 0.75em;
+		}
 		width: 42px;
 	}
 
@@ -57,11 +61,19 @@
 	background: {
 		color: transparent;
 		position: 50%;
+		repeat: no-repeat;
 		size: $size;
 	};
 	border: none;
-	height: $size;
-	width: $size;
+	border-radius: 50%;
+	height: $size + 8;
+	transition: box-shadow 0.1s ease-in-out;
+	width: $size + 8;
+
+	&:focus {
+		box-shadow: 0px 0px 5px rgb(91, 157, 217);
+		outline: none;
+	}
 }
 
 .btn-checklist-state--initial {
