@@ -1,3 +1,14 @@
+.phase {
+	@at-root .phase__navigation {
+		margin-top: 1em;
+		overflow: hidden;
+
+		a[rel="next"] {
+			float: right;
+		}
+	}
+}
+
 .checklist {
 	font-weight: 300;
 	padding: 0;
