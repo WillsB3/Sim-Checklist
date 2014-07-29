@@ -18,11 +18,15 @@
 					templateUrl: 'static/src/checklist/phase.html',
 					controller: 'ChecklistPhaseCtrl',
 					resolve: {
-						phaseData: function ($stateParams, checklistData) {
-							var phase = _.find(checklistData.phases, function (value) {
+						phaseIndex: function ($stateParams, checklistData) {
+							var phaseIndex = _.findIndex(checklistData.phases, function (value) {
 								return value.slug === $stateParams.phaseSlug;
 							});
-							return phase;
+
+							return phaseIndex;
+						},
+						phaseData: function (phaseIndex, checklistData) {
+							return checklistData.phases[phaseIndex];
 						}
 					}
 				});
@@ -37,7 +41,7 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseData) {
+		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData) {
 
 			function getPrevPhaseSlug() {
 				var currentPhaseIndex;
@@ -100,6 +104,7 @@
 			}
 
 			$scope.phase = phaseData;
+			$scope.phaseIndex = phaseIndex;
 			$scope.prevPhaseSlug = getPrevPhaseSlug();
 			$scope.nextPhaseSlug = getNextPhaseSlug();
 
