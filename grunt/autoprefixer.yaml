@@ -1,0 +1,9 @@
+options:
+  browsers:
+    - 'last 2 version'
+  cascade: true
+  map: true
+
+dev:
+  src: '<%= build %>/css/<%= package.name %>.css'
+  dest: '<%= build %>/css/<%= package.name %>-prefixed.css'

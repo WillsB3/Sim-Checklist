@@ -1,15 +1,24 @@
 scss:
-  files: 
+  files:
     - '<%= scss %>/**/*.scss'
-  tasks: 
+  tasks:
     - 'sass'
   options:
     livereload: false
 
-css: 
+css:
   files:
     - '<%= build %>/css/<%= package.name %>.css'
-  options: 
+  tasks:
+    - 'autoprefixer:dev'
+  options:
+    livereload: false
+
+
+css-prefixed:
+  files:
+    - '<%= build %>/css/<%= package.name %>-prefixed.css'
+  options:
     livereload: true
 
 js:

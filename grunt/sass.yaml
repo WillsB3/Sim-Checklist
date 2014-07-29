@@ -1,3 +1,6 @@
 dev:
   files:
     '<%= build %>/css/<%= package.name %>.css' : '<%= scss %>/<%= package.name %>.scss'
+  options:
+    style: 'expanded'
+    sourcemap: true
