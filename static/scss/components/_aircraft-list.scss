@@ -1,0 +1,49 @@
+.aircraft-list {
+
+}
+
+.aircraft-list-item {
+	background-color: #000;
+	height: 120px;
+	overflow: hidden;
+	position: relative;
+
+	@at-root .aircraft-list-item__link {
+		display: block;
+		height: 100%;
+		width: 100%;
+
+		&:hover .aircraft-list-item__bg {
+			opacity: 1;
+		}
+	}
+
+	@at-root .aircraft-list-item__bg {
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: block;
+		height: 100%;
+		left: 0;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		transition-property: transform;
+		transition-duration: 0.2s;
+		transition-timing-function: ease-in-out;
+		width: 100%;
+	}
+
+	@at-root .aircraft-list-item__name {
+		$padding: 20px;
+		bottom: $padding;
+		color: #fff;
+		display: block;
+		font-size: 1.4rem;
+		position: absolute;
+		right: $padding;
+		text-decoration: none;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		z-index: 1;
+	}
+}

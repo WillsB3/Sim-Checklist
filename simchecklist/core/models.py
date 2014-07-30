@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser, UserManager
 
 class Aircraft(models.Model):
     name = models.CharField(max_length=200)
+    class_name = models.CharField(max_length=100)
 
     class Meta:
         verbose_name_plural = 'Aircraft'

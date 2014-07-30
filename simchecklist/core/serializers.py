@@ -6,7 +6,7 @@ from . import models
 class AircraftSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Aircraft
-        fields = ('id', 'name', 'checklists')
+        fields = ('id', 'name', 'class_name', 'checklists')
 
 
 class ChecklistStepSerializer(serializers.ModelSerializer):

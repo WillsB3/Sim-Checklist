@@ -14,7 +14,7 @@
 
 				.state('checklist-phase', {
 					parent: 'checklist-detail',
-					url: '/phases/:phaseSlug',
+					url: '/phase/:phaseSlug',
 					templateUrl: 'static/src/checklist/phase.html',
 					controller: 'ChecklistPhaseCtrl',
 					resolve: {

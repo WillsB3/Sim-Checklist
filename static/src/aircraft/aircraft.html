@@ -1,7 +1,10 @@
 <h1>Available Aircraft</h1>
 
-<ul>
-	<li ng-repeat="aero in aircraft">
-		<a ng-href="/#/aircraft/{{aero.id}}/checklists" ng-bind="aero.name"></a>
+<ul class="aircraft-list m-bare-list">
+	<li ng-repeat="aero in aircraft" class="aircraft-list-item">
+		<a ng-href="/#/aircraft/{{aero.id}}/checklists" class="aircraft-list-item__link">
+			<span ng-style="{ 'background-image': 'url(/static/assets/content-images/aircraft/{{ aero.class_name }}.jpg)' }" class="aircraft-list-item__bg"></span>
+			<span ng-bind="aero.name" class="aircraft-list-item__name"></span>
+		</a>
 	</li>
 </ul>
