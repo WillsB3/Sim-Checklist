@@ -49,19 +49,19 @@
 
 		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData, phaseRunData, STEP_STATES, STEP_STATE_ORDER) {
 
-			function initialize () {
-				updateProgress();
-			}
+			this.initialize = function () {
+				this.updateProgress();
+			};
 
-			function getProgressStyles () {
+			this.getProgressStyles = function () {
 				var styles = {};
 				var prefixed = Modernizr.prefixed('transform');
 				var css = prefixed.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
 				styles[css] = 'translateX(' + $scope.progress.toFixed(2) + '%)';
 				return styles;
-			}
+			};
 
-			function updateProgress () {
+			this.updateProgress = function () {
 				console.log(STEP_STATES);
 				var totalSteps = $scope.phaseRun.steps.length;
 				var completedSteps = _.filter($scope.phaseRun.steps, function (step) {
@@ -70,10 +70,10 @@
 				var numRemainingSteps = $scope.phaseRun.steps.length - completedSteps.length;
 
 				$scope.progress = completedSteps.length / numRemainingSteps * 100;
-				$scope.progressStyles = getProgressStyles() + $scope.progress + '%';
-			}
+				$scope.progressStyles = this.getProgressStyles() + $scope.progress + '%';
+			};
 
-			function getPrevPhaseSlug() {
+			this.getPrevPhaseSlug = function () {
 				var currentPhaseIndex;
 				var nextPhaseConfig;
 				var nextPhaseIndex;
@@ -93,9 +93,9 @@
 				nextPhaseConfig = $scope.checklist.phases[nextPhaseIndex];
 
 				return nextPhaseConfig.slug;
-			}
+			};
 
-			function getNextPhaseSlug() {
+			this.getNextPhaseSlug = function () {
 				var currentPhaseIndex;
 				var nextPhaseConfig;
 				var nextPhaseIndex;
@@ -115,9 +115,9 @@
 				nextPhaseConfig = $scope.checklist.phases[nextPhaseIndex];
 
 				return nextPhaseConfig.slug;
-			}
+			};
 
-			function toggleStepState (stateObject, direction) {
+			this.toggleStepState = function (stateObject, direction) {
 				var stateKey = _.findKey(STEP_STATES, function (value, key) { return value === stateObject.state; });
 				var currentIndex = STEP_STATE_ORDER.indexOf(stateKey);
 				var newIndex;
@@ -134,10 +134,8 @@
 
 				stateObject.state = STEP_STATES[STEP_STATE_ORDER[newIndex]];
 
-				updateProgress();
-			}
-
-			initialize();
+				this.updateProgress();
+			};
 
 			/////////////
 			// Scope API
@@ -149,13 +147,16 @@
 			$scope.phaseRun = phaseRunData;
 			$scope.phaseIndex = phaseIndex;
 
-			$scope.prevPhaseSlug = getPrevPhaseSlug();
-			$scope.nextPhaseSlug = getNextPhaseSlug();
+			$scope.prevPhaseSlug = this.getPrevPhaseSlug();
+			$scope.nextPhaseSlug = this.getNextPhaseSlug();
 
 			$scope.progress = 0;
-			$scope.getProgressStyles = getProgressStyles;
+			$scope.getProgressStyles = this.getProgressStyles;
 
-			$scope.toggleState = toggleStepState;
+			$scope.updateProgress = this.updateProgress;
+			$scope.toggleState = this.toggleStepState;
+
+			this.initialize();
 		});
 
 }());
