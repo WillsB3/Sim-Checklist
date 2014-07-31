@@ -91,3 +91,30 @@
 .btn-checklist-state--failed {
 	background-image: url('/static/assets/icons/fail.svg');
 }
+
+.phase-progress {
+	bottom: 0px;
+	height: 4px;
+	left: -100%;
+	position: fixed;
+	width: 100%;
+
+	@at-root .phase-progress__bar {
+		background: #7cb342;
+		border-bottom-right-radius: 1px;
+		border-top-right-radius: 1px;
+		height: 100%;
+		transition: transform 350ms;
+	}
+
+	@at-root .phase-progress__peg {
+		border-radius: 100%;
+		box-shadow: #7cb342 1px 0 6px 1px;
+		height: 2px;
+		opacity: .45;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 70px;
+	}
+}

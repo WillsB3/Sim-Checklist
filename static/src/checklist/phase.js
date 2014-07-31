@@ -4,7 +4,12 @@
 
 	// checklist detail page
 	// =============================================================================
-	angular.module('checklist.phase', ['ui.router', 'checklist.common.services', 'LocalStorageModule'])
+	angular.module('checklist.phase', [
+			'ui.router',
+			'checklist.common.constants',
+			'checklist.common.services',
+			'LocalStorageModule'
+		])
 
 		// configure routes
 		// =============================================================================
@@ -27,6 +32,9 @@
 						},
 						phaseData: function (phaseIndex, checklistData) {
 							return checklistData.phases[phaseIndex];
+						},
+						phaseRunData: function (runData, phaseIndex) {
+							return runData.phases[phaseIndex];
 						}
 					}
 				});
@@ -39,9 +47,31 @@
 			console.log('checklist.phase module running...');
 		})
 
-		// our controller for the map
-		// =============================================================================
-		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData) {
+		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData, phaseRunData, STEP_STATES, STEP_STATE_ORDER) {
+
+			function initialize () {
+				updateProgress();
+			}
+
+			function getProgressStyles () {
+				var styles = {};
+				var prefixed = Modernizr.prefixed('transform');
+				var css = prefixed.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
+				styles[css] = 'translateX(' + $scope.progress.toFixed(2) + '%)';
+				return styles;
+			}
+
+			function updateProgress () {
+				console.log(STEP_STATES);
+				var totalSteps = $scope.phaseRun.steps.length;
+				var completedSteps = _.filter($scope.phaseRun.steps, function (step) {
+					return step.state !== STEP_STATES.INITIAL;
+				});
+				var numRemainingSteps = $scope.phaseRun.steps.length - completedSteps.length;
+
+				$scope.progress = completedSteps.length / numRemainingSteps * 100;
+				$scope.progressStyles = getProgressStyles() + $scope.progress + '%';
+			}
 
 			function getPrevPhaseSlug() {
 				var currentPhaseIndex;
@@ -87,27 +117,45 @@
 				return nextPhaseConfig.slug;
 			}
 
-			console.info('ChecklistPhaseCtrl', $stateParams.phaseSlug);
+			function toggleStepState (stateObject, direction) {
+				var stateKey = _.findKey(STEP_STATES, function (value, key) { return value === stateObject.state; });
+				var currentIndex = STEP_STATE_ORDER.indexOf(stateKey);
+				var newIndex;
 
-			// If this state was activated without a specific phase parameter
-			// supplied we can't do anything. Automatically redirect to the
-			// first phase.
-			if (!phaseData) {
-				// Go to the first phase by default
-				$state.go('checklist-phase', {
-					phaseSlug: checklistData.phases[0].slug
-				}, {
-					location: 'replace'
-				});
+				if (direction === 'next') {
+					newIndex = currentIndex + 1;
+					newIndex = newIndex % STEP_STATE_ORDER.length;
+				} else {
+					newIndex = currentIndex - 1;
+					if (newIndex === -1) {
+						newIndex = STEP_STATE_ORDER.length - 1;
+					}
+				}
 
-				return;
+				stateObject.state = STEP_STATES[STEP_STATE_ORDER[newIndex]];
+
+				updateProgress();
 			}
 
+			initialize();
+
+			/////////////
+			// Scope API
+			/////////////
+			// $scope.STEP_STATES = STEP_STATES;
+			// $scope.STEP_STATE_ORDER = STEP_STATE_ORDER;
+
 			$scope.phase = phaseData;
+			$scope.phaseRun = phaseRunData;
 			$scope.phaseIndex = phaseIndex;
+
 			$scope.prevPhaseSlug = getPrevPhaseSlug();
 			$scope.nextPhaseSlug = getNextPhaseSlug();
 
+			$scope.progress = 0;
+			$scope.getProgressStyles = getProgressStyles;
+
+			$scope.toggleState = toggleStepState;
 		});
 
 }());

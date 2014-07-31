@@ -4,16 +4,12 @@
 
 	// checklist detail page
 	// =============================================================================
-	angular.module('checklist.detail', ['ui.router', 'checklist.common.services', 'LocalStorageModule'])
-
-		.constant('STATES', {
-			INITIAL: 'initial',
-			CHECKED: 'checked',
-			SKIPPED: 'skipped',
-			FAILED: 'failed'
-		})
-
-		.constant('STATE_ORDER', ['INITIAL', 'CHECKED', 'SKIPPED', 'FAILED'])
+	angular.module('checklist.detail', [
+			'ui.router',
+			'checklist.common.constants',
+			'checklist.common.services',
+			'LocalStorageModule'
+		])
 
 		// configure routes
 		// =============================================================================
@@ -53,7 +49,7 @@
 
 		// our controller for the map
 		// =============================================================================
-		.controller('ChecklistDetailCtrl', function ($scope, $state, checklistData, runData, ChecklistRunService, STATES, STATE_ORDER) {
+		.controller('ChecklistDetailCtrl', function ($scope, $state, checklistData, runData, ChecklistRunService) {
 
 			console.info('ChecklistDetailCtrl');
 
@@ -73,23 +69,9 @@
 					ChecklistRunService.saveRun(newValue);
 				}
 			}
-
-			function toggleStepState (stateObject) {
-				var stateKey = _.findKey(STATES, function (value, key) { return value === stateObject.state; });
-				var currentIndex = STATE_ORDER.indexOf(stateKey);
-				var nextIndex = currentIndex + 1;
-
-				nextIndex = nextIndex % STATE_ORDER.length;
-				stateObject.state = STATES[STATE_ORDER[nextIndex]];
-			}
-
-			// Publish selected controller
-			// functions to scope API.
-			// =============================
-			$scope.toggleState = toggleStepState;
 		})
 
-		.service('ChecklistRunService', function checklistRunService(localStorageService, STATES) {
+		.service('ChecklistRunService', function checklistRunService(localStorageService) {
 
 			var service = {};
 

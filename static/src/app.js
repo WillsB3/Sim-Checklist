@@ -9,6 +9,7 @@
 			'ngAnimate',
 			'ui.router',
 			'ngTouch',
+			'checklist.common.directives',
 			'checklist.aircraft',
 			'checklist.checklists',
 			'checklist.detail',
