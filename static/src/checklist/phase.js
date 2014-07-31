@@ -66,10 +66,9 @@
 				var completedSteps = _.filter($scope.phaseRun.steps, function (step) {
 					return step.state !== STEP_STATES.INITIAL;
 				});
-				var numRemainingSteps = $scope.phaseRun.steps.length - completedSteps.length;
 
-				$scope.progress = completedSteps.length / numRemainingSteps * 100;
-				$scope.progressStyles = this.getProgressStyles() + $scope.progress + '%';
+				$scope.progress = completedSteps.length / totalSteps * 100;
+				$scope.progressStyles = this.getProgressStyles();
 			};
 
 			this.getPrevPhaseSlug = function () {
