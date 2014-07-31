@@ -71,7 +71,7 @@
 			}
 		})
 
-		.service('ChecklistRunService', function checklistRunService(localStorageService) {
+		.service('ChecklistRunService', function checklistRunService(localStorageService, STEP_STATES) {
 
 			var service = {};
 
@@ -91,7 +91,7 @@
 					angular.forEach(phaseValue.steps, function (stepValue, stepKey) {
 						runPhaseData.steps.push({
 							id: stepValue.id,
-							state: STATES.INITIAL
+							state: STEP_STATES.INITIAL
 						});
 					});
 
