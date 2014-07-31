@@ -62,7 +62,6 @@
 			};
 
 			this.updateProgress = function () {
-				console.log(STEP_STATES);
 				var totalSteps = $scope.phaseRun.steps.length;
 				var completedSteps = _.filter($scope.phaseRun.steps, function (step) {
 					return step.state !== STEP_STATES.INITIAL;
