@@ -15,18 +15,18 @@
 						<span ng-bind="step.action" class="checklist__item-action"></span>
 					</td>
 					<td class="checklist__item-cell checklist__item-cell--buttons">
-						<button class="btn-checklist-state" ng-class="'btn-checklist-state--' + run.phases[phaseIndex].steps[$index].state" ng-click="toggleState(run.phases[phaseIndex].steps[$index], 'next')" sc-right-click="toggleState(run.phases[phaseIndex].steps[$index], 'prev')"></button>
+						<button class="btn-checklist-state" ng-class="'btn-checklist-state--' + run.phases[phaseIndex].steps[$index].state" ng-click="phaseCtrl.toggleStepState(run.phases[phaseIndex].steps[$index], 'next')" sc-right-click="phaseCtrl.toggleStepState(run.phases[phaseIndex].steps[$index], 'prev')"></button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 	<nav class="phase__navigation">
-		<a ng-if="prevPhaseSlug" ui-sref="checklist-phase({ phaseSlug: prevPhaseSlug })" rel="prev">Previous Phase</a>
-		<a ng-if="nextPhaseSlug" ui-sref="checklist-phase({ phaseSlug: nextPhaseSlug })" rel="next">Next Phase</a>
+		<a ng-if="phaseCtrl.getPrevPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getPrevPhaseSlug() })" rel="prev">Previous Phase</a>
+		<a ng-if="phaseCtrl.getNextPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getNextPhaseSlug() })" rel="next">Next Phase</a>
 	</nav>
 	<div class="phase-progress">
-		<div class="phase-progress__bar" ng-style="getProgressStyles()">
+		<div class="phase-progress__bar" ng-style="phaseCtrl.getProgressStyles()">
 			<div class="phase-progress__peg"></div>
 		</div>
 	</div>

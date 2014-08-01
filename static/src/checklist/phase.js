@@ -21,7 +21,7 @@
 					parent: 'checklist-detail',
 					url: '/phase/:phaseSlug',
 					templateUrl: 'static/src/checklist/phase.html',
-					controller: 'ChecklistPhaseCtrl',
+					controller: 'ChecklistPhaseCtrl as phaseCtrl',
 					resolve: {
 						phaseIndex: function ($stateParams, checklistData) {
 							var phaseIndex = _.findIndex(checklistData.phases, function (value) {
@@ -144,15 +144,7 @@
 			$scope.phase = phaseData;
 			$scope.phaseRun = phaseRunData;
 			$scope.phaseIndex = phaseIndex;
-
-			$scope.prevPhaseSlug = this.getPrevPhaseSlug();
-			$scope.nextPhaseSlug = this.getNextPhaseSlug();
-
 			$scope.progress = 0;
-			$scope.getProgressStyles = this.getProgressStyles;
-
-			$scope.updateProgress = this.updateProgress;
-			$scope.toggleState = this.toggleStepState;
 
 			this.initialize();
 		});
