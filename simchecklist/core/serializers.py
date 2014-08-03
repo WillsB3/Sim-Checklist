@@ -3,11 +3,6 @@ from rest_framework import serializers
 
 from . import models
 
-class AircraftSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = models.Aircraft
-        fields = ('id', 'name', 'class_name', 'checklists')
-
 
 class ChecklistStepSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,12 +15,12 @@ class ChecklistPhaseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.ChecklistPhase
-        fields = ('id', 'checklist', 'name', 'slug', 'steps')
+        fields = ('id', 'aircraft', 'name', 'slug', 'steps')
 
 
-class ChecklistSerializer(serializers.ModelSerializer):
+class AircraftSerializer(serializers.ModelSerializer):
     phases = ChecklistPhaseSerializer(many=True)
 
     class Meta:
-        model = models.Checklist
-        fields = ('id', 'aircraft', 'name', 'phases')
+        model = models.Aircraft
+        fields = ('id', 'name', 'class_name', 'phases')
