@@ -22,8 +22,8 @@
 		</table>
 	</div>
 	<nav class="phase__navigation">
-		<a ng-if="phaseCtrl.getPrevPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getPrevPhaseSlug() })" rel="prev">Previous Phase</a>
-		<a ng-if="phaseCtrl.getNextPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getNextPhaseSlug() })" rel="next">Next Phase</a>
+		<a ng-if="phaseCtrl.getPrevPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getPrevPhaseSlug() })" rel="prev" sc-scroll-to-top>Previous Phase</a>
+		<a ng-if="phaseCtrl.getNextPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getNextPhaseSlug() })" rel="next" sc-scroll-to-top>Next Phase</a>
 	</nav>
 	<div class="phase-progress">
 		<div class="phase-progress__bar" ng-style="phaseCtrl.getProgressStyles()">
