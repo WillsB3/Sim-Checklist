@@ -1,32 +1,51 @@
 import datetime
+
+from django.contrib.auth.models import AbstractUser, UserManager
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from django.utils.text import slugify
-from django.contrib.auth.models import AbstractUser, UserManager
 
 from ordered_model.models import OrderedModel
+from autoslug import AutoSlugField
 
 class Aircraft(models.Model):
     name = models.CharField(max_length=200)
     class_name = models.CharField(max_length=100)
+    slug = AutoSlugField(populate_from='name')
+    first_phase_slug = models.CharField(max_length=200)
+
+    def save(self, *args, **kwargs):
+
+        try:
+            self.first_phase_slug = ChecklistPhase.objects.get(aircraft=self.id, order=1).slug
+            print('Saving %s with first_phase_slug: %s' % (self.name, self.first_phase_slug,))
+        except ObjectDoesNotExist:
+            first_phase = None
+            print('Saving %s with first_phase_slug: None' % self.name)
+
+        super(Aircraft, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return self.name
 
     class Meta:
         verbose_name_plural = 'Aircraft'
 
-    def __unicode__(self):
-        return self.name
 
-
-class ChecklistPhase(models.Model):
+class ChecklistPhase(OrderedModel):
     aircraft = models.ForeignKey(Aircraft, related_name='phases')
     name = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, null=True, blank=True)
+    slug = AutoSlugField(populate_from='name', unique_with='aircraft')
+
+    def save(self, *args, **kwargs):
+        ac_model = Aircraft.objects.get(id=self.aircraft)
+        super(ChecklistPhase, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super(ChecklistPhase, self).save(*args, **kwargs)
+    class Meta:
+        ordering = ('order',)
 
 
 class ChecklistStep(OrderedModel):

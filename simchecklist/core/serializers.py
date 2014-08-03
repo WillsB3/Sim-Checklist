@@ -23,4 +23,4 @@ class AircraftSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Aircraft
-        fields = ('id', 'name', 'class_name', 'phases')
+        fields = ('id', 'name', 'slug', 'class_name', 'first_phase_slug', 'phases')

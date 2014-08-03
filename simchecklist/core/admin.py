@@ -30,5 +30,4 @@ class ChecklistStepAdmin(OrderedModelAdmin):
     list_display = ('item', 'action', 'move_up_down_links')
 
 admin.site.register(models.Aircraft, AircraftAdmin)
-admin.site.register(models.Checklist, ChecklistAdmin)
-admin.site.register(models.ChecklistStep, ChecklistStepAdmin)
+# admin.site.register(models.ChecklistStep, ChecklistStepAdmin)

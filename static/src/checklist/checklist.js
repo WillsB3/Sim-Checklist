@@ -18,13 +18,13 @@
 			$stateProvider
 
 				.state('checklist-detail', {
-					url: '/aircraft/:aircraftId/checklist/:checklistId',
+					url: '/aircraft/:aircraftId',
 					templateUrl: 'static/src/checklist/checklist.html',
 					controller: 'ChecklistDetailCtrl',
 					resolve: {
 						checklistData: function($stateParams, ChecklistService) {
 							console.info('fetching checklist data...');
-							return ChecklistService.get({ id: $stateParams.checklistId }).$promise;
+							return ChecklistService.get({ id: $stateParams.aircraftId }).$promise;
 						},
 						runData: function(checklistData, ChecklistRunService) {
 							console.info('fetching checklist run data...');
