@@ -12,7 +12,7 @@ class AircraftSerializer(serializers.ModelSerializer):
 class ChecklistStepSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ChecklistStep
-        fields = ('id', 'checklist_phase', 'item', 'action')
+        fields = ('id', 'checklist_phase', 'item', 'action', 'order')
 
 
 class ChecklistPhaseSerializer(serializers.ModelSerializer):

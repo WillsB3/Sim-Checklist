@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import AbstractUser, UserManager
 
+from ordered_model.models import OrderedModel
+
 class Aircraft(models.Model):
     name = models.CharField(max_length=200)
     class_name = models.CharField(max_length=100)
@@ -35,11 +37,13 @@ class ChecklistPhase(models.Model):
         super(ChecklistPhase, self).save(*args, **kwargs)
 
 
-class ChecklistStep(models.Model):
+class ChecklistStep(OrderedModel):
     checklist_phase = models.ForeignKey(ChecklistPhase, related_name='steps')
     item = models.CharField(max_length=200)
     action = models.CharField(max_length=200)
 
+    class Meta:
+        ordering = ('order',)
 
 # class User(AbstractUser):
 #     aircraft = models.ManyToManyField(Aircraft)
