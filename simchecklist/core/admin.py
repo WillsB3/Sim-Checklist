@@ -14,15 +14,14 @@ class ChecklistStepInline(NestedTabularInline):
 class ChecklistPhaseInline(NestedStackedInline):
     model = models.ChecklistPhase
     extra = 1
-    fk_name = 'checklist'
+    fk_name = 'aircraft'
     inlines = [ChecklistStepInline]
     exclude = ('slug',)
 
 
-class ChecklistAdmin(NestedModelAdmin):
-    model = models.Checklist
+class AircraftAdmin(NestedModelAdmin):
+    model = models.Aircraft
     inlines = [ChecklistPhaseInline]
 
 
-admin.site.register(models.Checklist, ChecklistAdmin)
-admin.site.register(models.Aircraft)
+admin.site.register(models.Aircraft, AircraftAdmin)

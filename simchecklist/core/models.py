@@ -14,16 +14,8 @@ class Aircraft(models.Model):
         return self.name
 
 
-class Checklist(models.Model):
-    aircraft = models.ForeignKey(Aircraft, related_name='checklists')
-    name = models.CharField(max_length=200)
-
-    def __unicode__(self):
-        return "{aircraft}: {checklist_name}".format(aircraft=self.aircraft, checklist_name=self.name)
-
-
 class ChecklistPhase(models.Model):
-    checklist = models.ForeignKey(Checklist, related_name='phases')
+    aircraft = models.ForeignKey(Aircraft, related_name='phases')
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, null=True, blank=True)
 
