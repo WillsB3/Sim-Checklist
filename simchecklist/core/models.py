@@ -12,18 +12,6 @@ class Aircraft(models.Model):
     name = models.CharField(max_length=200)
     class_name = models.CharField(max_length=100)
     slug = AutoSlugField(populate_from='name')
-    first_phase_slug = models.CharField(max_length=200)
-
-    def save(self, *args, **kwargs):
-
-        try:
-            self.first_phase_slug = ChecklistPhase.objects.get(aircraft=self.id, order=1).slug
-            print('Saving %s with first_phase_slug: %s' % (self.name, self.first_phase_slug,))
-        except ObjectDoesNotExist:
-            first_phase = None
-            print('Saving %s with first_phase_slug: None' % self.name)
-
-        super(Aircraft, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
@@ -32,13 +20,31 @@ class Aircraft(models.Model):
         verbose_name_plural = 'Aircraft'
 
 
+class Checklist(models.Model):
+    aircraft = models.ForeignKey(Aircraft, related_name='checklist')
+    first_phase_slug = models.CharField(max_length=200)
+
+    def save(self, *args, **kwargs):
+        try:
+            self.first_phase_slug = ChecklistPhase.objects.get(checklist=self.id, order=1).slug
+            print('Saving with first_phase_slug: %s' % self.first_phase_slug)
+        except ObjectDoesNotExist:
+            first_phase = None
+            print('Saving with first_phase_slug: None')
+
+        super(Checklist, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return "{aircraft} checklist".format(aircraft=self.aircraft)
+
+
 class ChecklistPhase(OrderedModel):
-    aircraft = models.ForeignKey(Aircraft, related_name='phases')
+    checklist = models.ForeignKey(Checklist, related_name='phases')
     name = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='name', unique_with='aircraft')
 
     def save(self, *args, **kwargs):
-        ac_model = Aircraft.objects.get(id=self.aircraft)
+        self.checklist.save()
         super(ChecklistPhase, self).save(*args, **kwargs)
 
     def __unicode__(self):

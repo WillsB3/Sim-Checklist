@@ -12,17 +12,25 @@ class AircraftViewSet(viewsets.ModelViewSet):
 	model = models.Aircraft
 	serializer_class = serializers.AircraftSerializer
 
+
 class ChecklistPhaseViewSet(viewsets.ModelViewSet):
 	model = models.ChecklistPhase
 	serializer_class = serializers.ChecklistPhaseSerializer
+
 
 class ChecklistStepViewSet(viewsets.ModelViewSet):
 	model = models.ChecklistStep
 	serializer_class = serializers.ChecklistStepSerializer
 
 
+class ChecklistViewSet(viewsets.ModelViewSet):
+    model = models.Checklist
+    serializer_class = serializers.ChecklistSerializer
+    filter_fields = ('aircraft',)
+
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'aircraft', AircraftViewSet)
+router.register(r'checklist', ChecklistViewSet)
 router.register(r'checklist_phases', ChecklistPhaseViewSet)
 router.register(r'checklist_steps', ChecklistStepViewSet)

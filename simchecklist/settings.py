@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'django_filters',
-    'debug_toolbar',
+    # 'debug_toolbar',
     'rest_framework',
     'ordered_model',
     'simchecklist.core',

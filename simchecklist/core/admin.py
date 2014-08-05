@@ -16,18 +16,22 @@ class ChecklistStepInline(NestedTabularInline):
 class ChecklistPhaseInline(NestedStackedInline):
     model = models.ChecklistPhase
     extra = 1
-    fk_name = 'aircraft'
+    fk_name = 'checklist'
     inlines = [ChecklistStepInline]
     exclude = ('slug',)
 
 
-class AircraftAdmin(NestedModelAdmin):
-    model = models.Aircraft
+class ChecklistAdmin(NestedModelAdmin):
+    model = models.Checklist
     inlines = [ChecklistPhaseInline]
+    exclude = ('first_phase_slug',)
+
 
 class ChecklistStepAdmin(OrderedModelAdmin):
     list_filter = ['checklist_phase']
     list_display = ('item', 'action', 'move_up_down_links')
 
-admin.site.register(models.Aircraft, AircraftAdmin)
-# admin.site.register(models.ChecklistStep, ChecklistStepAdmin)
+
+admin.site.register(models.Aircraft)
+admin.site.register(models.Checklist, ChecklistAdmin)
+admin.site.register(models.ChecklistStep, ChecklistStepAdmin)

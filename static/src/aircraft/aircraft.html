@@ -2,7 +2,7 @@
 
 <ul class="aircraft-list m-bare-list">
 	<li ng-repeat="aero in aircraft" class="aircraft-list-item">
-		<a ui-sref="checklist-phase({ aircraftId: aero.id, phaseSlug: aero.first_phase_slug })" class="aircraft-list-item__link">
+		<a ui-sref="checklist-phase({ aircraftId: aero.id, checklistId: aero.checklistId, phaseSlug: aero.first_phase_slug })" class="aircraft-list-item__link">
 			<span ng-style="{ 'background-image': 'url(/static/assets/content-images/aircraft/{{ aero.class_name }}.jpg)' }" class="aircraft-list-item__bg"></span>
 			<span ng-bind="aero.name" class="aircraft-list-item__name"></span>
 		</a>
