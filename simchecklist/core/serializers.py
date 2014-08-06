@@ -4,9 +4,14 @@ from rest_framework import serializers
 from . import models
 
 class AircraftSerializer(serializers.ModelSerializer):
+    first_phase_slug = serializers.SerializerMethodField('get_first_phase_slug')
+
     class Meta:
         model = models.Aircraft
-        fields = ('id', 'name', 'slug', 'class_name', 'checklist')
+        fields = ('id', 'name', 'slug', 'class_name', 'checklist', 'first_phase_slug')
+
+    def get_first_phase_slug(self, obj):
+        return obj.checklist.model.phases.get(order='1').slug
 
 
 class ChecklistStepSerializer(serializers.ModelSerializer):
@@ -25,11 +30,7 @@ class ChecklistPhaseSerializer(serializers.ModelSerializer):
 
 class ChecklistSerializer(serializers.ModelSerializer):
     phases = ChecklistPhaseSerializer(many=True)
-    first_phase_slug = serializers.SerializerMethodField('get_first_phase_slug')
 
     class Meta:
         model = models.Checklist
-        fields = ('id', 'aircraft', 'first_phase_slug', 'phases')
-
-    def get_first_phase_slug(self, obj):
-        return obj.phases.get(order='1').slug
+        fields = ('id', 'aircraft', 'phases')
