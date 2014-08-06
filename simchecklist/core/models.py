@@ -22,17 +22,6 @@ class Aircraft(models.Model):
 
 class Checklist(models.Model):
     aircraft = models.ForeignKey(Aircraft, related_name='checklist')
-    first_phase_slug = models.CharField(max_length=200)
-
-    def save(self, *args, **kwargs):
-        try:
-            self.first_phase_slug = ChecklistPhase.objects.get(checklist=self.id, order=1).slug
-            print('Saving with first_phase_slug: %s' % self.first_phase_slug)
-        except ObjectDoesNotExist:
-            first_phase = None
-            print('Saving with first_phase_slug: None')
-
-        super(Checklist, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return "{aircraft} checklist".format(aircraft=self.aircraft)
@@ -42,10 +31,6 @@ class ChecklistPhase(OrderedModel):
     checklist = models.ForeignKey(Checklist, related_name='phases')
     name = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='name', unique_with='aircraft')
-
-    def save(self, *args, **kwargs):
-        self.checklist.save()
-        super(ChecklistPhase, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.name
@@ -61,7 +46,3 @@ class ChecklistStep(OrderedModel):
 
     class Meta:
         ordering = ('order',)
-
-# class User(AbstractUser):
-#     aircraft = models.ManyToManyField(Aircraft)
-#     objects = UserManager()

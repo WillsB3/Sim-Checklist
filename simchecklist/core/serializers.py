@@ -25,7 +25,11 @@ class ChecklistPhaseSerializer(serializers.ModelSerializer):
 
 class ChecklistSerializer(serializers.ModelSerializer):
     phases = ChecklistPhaseSerializer(many=True)
+    first_phase_slug = serializers.SerializerMethodField('get_first_phase_slug')
 
     class Meta:
         model = models.Checklist
         fields = ('id', 'aircraft', 'first_phase_slug', 'phases')
+
+    def get_first_phase_slug(self, obj):
+        return obj.phases.get(order='1').slug
