@@ -5,6 +5,7 @@
 html,
 body {
 	-webkit-font-smoothing: antialiased;
+	background-color: #f2f2f2;
 	font-size: 100%;
 	margin: 0;
 	padding: 0;
@@ -14,8 +15,14 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+h1,
+h2 {
+	color: rgba(0, 0, 0, 0.87);
+}
+
 h1 {
-	font-size: 1.5em;
+	@include rem(font-size, 24px);
+	@include rem(line-height, 32px);
 }
 
 .app-container {
@@ -26,6 +33,7 @@ h1 {
 
 .app-header {
 	background-color: $ui-primary-500;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.24);
 }
 
 .app-header__title {

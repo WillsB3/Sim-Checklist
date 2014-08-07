@@ -1,10 +1,20 @@
 .phase {
-	@at-root .phase__navigation {
-		margin-top: 1em;
-		overflow: hidden;
+	background-color: #fff;
+	box-shadow: 1px 0 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	padding: 16px;
 
-		a[rel="next"] {
-			float: right;
+	@at-root {
+		.phase__title {
+			margin: 8px 0 24px 0;
+		}
+
+		.phase__navigation {
+			margin-top: 1em;
+			overflow: hidden;
+
+			a[rel="next"] {
+				float: right;
+			}
 		}
 	}
 }
@@ -19,7 +29,7 @@
 }
 
 .checklist__item {
-	$border: 1px solid #d6d6d6;
+	$border: 1px solid rgb(224, 224, 224);
 	border: $border;
 	border-bottom-style: none;
 
