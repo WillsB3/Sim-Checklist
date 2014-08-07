@@ -11,7 +11,10 @@ class AircraftSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'slug', 'class_name', 'checklist', 'first_phase_slug')
 
     def get_first_phase_slug(self, obj):
-        return obj.checklist.model.phases.get(order='1').slug
+        try:
+            return models.ChecklistPhase.objects.filter(checklist__aircraft__id=obj.id)[0]
+        except IndexError:
+            return None
 
 
 class ChecklistStepSerializer(serializers.ModelSerializer):
