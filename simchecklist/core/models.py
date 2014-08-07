@@ -21,7 +21,7 @@ class Aircraft(models.Model):
 
 
 class Checklist(models.Model):
-    aircraft = models.ForeignKey(Aircraft, related_name='checklist')
+    aircraft = models.OneToOneField(Aircraft, related_name='checklist')
 
     def __unicode__(self):
         return "{aircraft} checklist".format(aircraft=self.aircraft)

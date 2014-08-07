@@ -12,7 +12,7 @@ class AircraftSerializer(serializers.ModelSerializer):
 
     def get_first_phase_slug(self, obj):
         try:
-            return models.ChecklistPhase.objects.filter(checklist__aircraft__id=obj.id)[0]
+            return models.ChecklistPhase.objects.filter(checklist__aircraft__id=obj.id)[0].slug
         except IndexError:
             return None
 

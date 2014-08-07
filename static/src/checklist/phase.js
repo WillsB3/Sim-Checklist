@@ -38,7 +38,6 @@
 						}
 					}
 				});
-
 		})
 
 		// application run block
