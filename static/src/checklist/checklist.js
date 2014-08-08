@@ -20,7 +20,7 @@
 				.state('checklist-detail', {
 					url: '/aircraft/:aircraftId',
 					templateUrl: 'static/src/checklist/checklist.html',
-					controller: 'ChecklistDetailCtrl',
+					controller: 'ChecklistDetailCtrl as checklistCtrl',
 					resolve: {
 						checklistData: function($stateParams, ChecklistService) {
 							console.info('fetching checklist data...');
@@ -60,15 +60,21 @@
 
 			// Scope watchers
 			// =============================
-			$scope.$watch('run', onRunDataModified, true);
+			$scope.$watch('run', this.onRunDataModified, true);
 
 			// Controller functions
 			// =============================
-			function onRunDataModified (newValue, oldValue) {
+			this.onRunDataModified = function (newValue, oldValue) {
+				console.warn('checklistCtrl:onRunDataModified', newValue, oldValue);
 				if (newValue) {
 					ChecklistRunService.saveRun(newValue);
 				}
-			}
+			};
+
+			this.newRun = function () {
+				$scope.run = ChecklistRunService.newRun($scope.checklist);
+				ChecklistRunService.saveRun($scope.run);
+			};
 		})
 
 		.service('ChecklistRunService', function checklistRunService(localStorageService, STEP_STATES) {
@@ -79,7 +85,8 @@
 				var run = {
 					checklistId: checklistData.id,
 					id: Date.now(),
-					phases: []
+					phases: [],
+					isNew: true
 				};
 
 				angular.forEach(checklistData.phases, function (phaseValue, phaseKey) {
@@ -112,6 +119,7 @@
 			};
 
 			service.saveRun = function (runData) {
+				runData.isNew = false;
 				return localStorageService.set('checklist-run:' + runData.checklistId, angular.toJson(runData));
 			};
 

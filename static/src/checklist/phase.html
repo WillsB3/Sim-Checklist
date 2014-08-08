@@ -1,5 +1,8 @@
 <div class="phase">
 	<h2 ng-bind="phase.name" class="phase__title"></h2>
+	<div ng-if="!phaseRun.isNew">
+		<button ng-click="checklistCtrl.newRun()" class="btn">Restart checklist</button>
+	</div>
 	<div class="checklist">
 		<table>
 			<thead></thead>

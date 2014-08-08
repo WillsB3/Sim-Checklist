@@ -49,7 +49,17 @@
 		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData, phaseRunData, STEP_STATES, STEP_STATE_ORDER) {
 
 			this.initialize = function () {
+				$scope.$watch('run.phases[' + phaseIndex + ']', this.onRunDataModified.bind(this), true);
+			};
+
+			this.onRunDataModified = function (newValue, oldValue) {
+				console.warn('phaseCtrl:onPhaseRunDataModified()', newValue, oldValue);
+				$scope.phaseRun = this.getPhaseRunData($scope.run);
 				this.updateProgress();
+			};
+
+			this.getPhaseRunData = function (runData) {
+				return runData.phases[phaseIndex];
 			};
 
 			this.getProgressStyles = function () {
@@ -137,8 +147,6 @@
 			/////////////
 			// Scope API
 			/////////////
-			// $scope.STEP_STATES = STEP_STATES;
-			// $scope.STEP_STATE_ORDER = STEP_STATE_ORDER;
 
 			$scope.phase = phaseData;
 			$scope.phaseRun = phaseRunData;

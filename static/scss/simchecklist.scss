@@ -16,8 +16,17 @@
 @import "mixins/_rem";
 
 /***************************
-** Elements
+** Base element styles
 ****************************/
 @import "base";
-@import "components/aircraft-list";
-@import "components/checklist";
+
+/***************************
+** Components
+****************************/
+@import "components/buttons";
+
+/***************************
+** Screens
+****************************/
+@import "screens/aircraft-list";
+@import "screens/checklist";
