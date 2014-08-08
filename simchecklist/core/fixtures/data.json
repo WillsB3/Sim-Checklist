@@ -1,0 +1,1191 @@
+[{
+	"pk": 1,
+	"model": "core.aircraft",
+	"fields": {
+		"class_name": "majestic-dash-8",
+		"name": "Majestic Dash 8 Q400",
+		"slug": "majestic-dash-8-q400"
+	}
+}, {
+	"pk": 2,
+	"model": "core.aircraft",
+	"fields": {
+		"class_name": "a2a-cessna-172",
+		"name": "A2A Cessna 172",
+		"slug": "a2a-cessna-172"
+	}
+}, {
+	"pk": 3,
+	"model": "core.aircraft",
+	"fields": {
+		"class_name": "a2a-cherokee",
+		"name": "A2A Cherokee",
+		"slug": "a2a-cherokee"
+	}
+}, {
+	"pk": 4,
+	"model": "core.aircraft",
+	"fields": {
+		"class_name": "aerosoft-airbus-x",
+		"name": "Aerosoft Airbus X Extended",
+		"slug": "aerosoft-airbus-x-extended"
+	}
+}, {
+	"pk": 1,
+	"model": "core.checklist",
+	"fields": {
+		"aircraft": 1
+	}
+}, {
+	"pk": 2,
+	"model": "core.checklist",
+	"fields": {
+		"aircraft": 2
+	}
+}, {
+	"pk": 3,
+	"model": "core.checklist",
+	"fields": {
+		"aircraft": 3
+	}
+}, {
+	"pk": 4,
+	"model": "core.checklist",
+	"fields": {
+		"aircraft": 4
+	}
+}, {
+	"pk": 1,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "preflight",
+		"order": 1,
+		"name": "Preflight"
+	}
+}, {
+	"pk": 2,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "start",
+		"order": 2,
+		"name": "Start"
+	}
+}, {
+	"pk": 3,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "after-start",
+		"order": 3,
+		"name": "After Start"
+	}
+}, {
+	"pk": 4,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "taxi",
+		"order": 4,
+		"name": "Taxi"
+	}
+}, {
+	"pk": 5,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "before-takeoff",
+		"order": 5,
+		"name": "Before Takeoff"
+	}
+}, {
+	"pk": 6,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "after-takeoff",
+		"order": 6,
+		"name": "After Takeoff"
+	}
+}, {
+	"pk": 7,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "climb",
+		"order": 7,
+		"name": "Climb"
+	}
+}, {
+	"pk": 8,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "descent",
+		"order": 8,
+		"name": "Descent"
+	}
+}, {
+	"pk": 9,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "approach",
+		"order": 9,
+		"name": "Approach"
+	}
+}, {
+	"pk": 10,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "landing",
+		"order": 10,
+		"name": "Landing"
+	}
+}, {
+	"pk": 11,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "after-landing",
+		"order": 11,
+		"name": "After Landing"
+	}
+}, {
+	"pk": 12,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 1,
+		"slug": "shutdown",
+		"order": 12,
+		"name": "Shutdown"
+	}
+}, {
+	"pk": 13,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 2,
+		"slug": "phase-1",
+		"order": 13,
+		"name": "Cessna Phase 1"
+	}
+}, {
+	"pk": 14,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 3,
+		"slug": "cherokee-phase-1",
+		"order": 14,
+		"name": "Cherokee Phase 1"
+	}
+}, {
+	"pk": 15,
+	"model": "core.checklistphase",
+	"fields": {
+		"checklist": 4,
+		"slug": "airbus-phase-1",
+		"order": 15,
+		"name": "Airbus Phase 1"
+	}
+}, {
+	"pk": 1,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Onboard PNF*",
+		"item": "Documentation",
+		"order": 1,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 2,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On & Checked PNF",
+		"item": "Batteries",
+		"order": 2,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 3,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On PNF",
+		"item": "DC External Power/APU",
+		"order": 3,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 4,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked PNF*",
+		"item": "Battery Temps",
+		"order": 4,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 5,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked PNF*",
+		"item": "Bus Voltages",
+		"order": 5,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 6,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked PNF*",
+		"item": "Safety Equipment",
+		"order": 6,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 7,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked 3 PNF*",
+		"item": "Landing Gear Lights & Pins",
+		"order": 7,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 8,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Green PNF*",
+		"item": "Engine Intake Doors",
+		"order": 8,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 9,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked In PNF",
+		"item": "Circuit Breakers",
+		"order": 9,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 10,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Norm PNF*",
+		"item": "Alt Gear Door, Inhibit Switch",
+		"order": 10,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 11,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Tested PNF*",
+		"item": "Fire and Smoke Detection",
+		"order": 11,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 12,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off PNF",
+		"item": "Bleed Air",
+		"order": 12,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 13,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required PNF",
+		"item": "APU Bleeds",
+		"order": 13,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 14,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On PNF*",
+		"item": "Recirc Fan",
+		"order": 14,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 15,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set & Checked PNF",
+		"item": "Pressurization",
+		"order": 15,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 16,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked PNF*",
+		"item": "Packs",
+		"order": 16,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 17,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Armed PNF",
+		"item": "Emergency Lights",
+		"order": 17,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 18,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off, __L/__R PNF",
+		"item": "Fuel Transfer, Quantity",
+		"order": 18,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 19,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On & Checked PNF",
+		"item": "Parking Brake, Pressure",
+		"order": 19,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 20,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Disc, Fuel Off PNF",
+		"item": "Power and Condition Levers",
+		"order": 20,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 21,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off PNF",
+		"item": "Nose Steering",
+		"order": 21,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 22,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set PNF",
+		"item": "FMS",
+		"order": 22,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 23,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Completed PNF",
+		"item": "Takeoff and Departure Briefing",
+		"order": 23,
+		"checklist_phase": 1
+	}
+}, {
+	"pk": 25,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "3 Units Set F/O",
+		"item": "Trims",
+		"order": 1,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 26,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Out F/O",
+		"item": "Doors and Fueling Lights",
+		"order": 2,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 27,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Passenger Signs",
+		"order": 3,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 28,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Received F/O",
+		"item": "Cabin Report",
+		"order": 4,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 29,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Locked F/O",
+		"item": "Flight Deck Door",
+		"order": 5,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 30,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Red F/O",
+		"item": "Anti-Collision",
+		"order": 6,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 31,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "APU Bleed",
+		"order": 7,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 32,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On, __volts F/O",
+		"item": "Battery Master",
+		"order": 8,
+		"checklist_phase": 2
+	}
+}, {
+	"pk": 33,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Up PNF",
+		"item": "Landing Gear",
+		"order": 1,
+		"checklist_phase": 6
+	}
+}, {
+	"pk": 34,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "0 PNF",
+		"item": "Flaps",
+		"order": 2,
+		"checklist_phase": 6
+	}
+}, {
+	"pk": 35,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On/Normal PNF",
+		"item": "Bleeds",
+		"order": 3,
+		"checklist_phase": 6
+	}
+}, {
+	"pk": 36,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set PNF",
+		"item": "Climb Power",
+		"order": 4,
+		"checklist_phase": 6
+	}
+}, {
+	"pk": 37,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "External Power/APU",
+		"order": 1,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 38,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Main Bus Tie",
+		"order": 2,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 39,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked F/O",
+		"item": "Electrical Panels",
+		"order": 3,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 40,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Max F/O",
+		"item": "Condition Levers",
+		"order": 4,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 41,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Selected F/O",
+		"item": "Autofeather",
+		"order": 6,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 42,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Fuel Pumps",
+		"order": 7,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 43,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On, Normal Indication F/O",
+		"item": "Hydraulics",
+		"order": 8,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 44,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "XCheck & Checked F/O",
+		"item": "Flaps & Speeds",
+		"order": 9,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 45,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Full Travel F/O",
+		"item": "Rudder",
+		"order": 10,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 46,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Nose Steering",
+		"order": 11,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 47,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked F/O",
+		"item": "PFD MFD ED",
+		"order": 12,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 48,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On/Minimum F/O",
+		"item": "Bleeds",
+		"order": 13,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 49,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked F/O",
+		"item": "DE-ICE Pressure",
+		"order": 14,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 50,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Test/Set F/O",
+		"item": "Ice Protection",
+		"order": 15,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 51,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Alt, On F/O",
+		"item": "XPDR, TCAS",
+		"order": 16,
+		"checklist_phase": 3
+	}
+}, {
+	"pk": 52,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked F/O",
+		"item": "Brakes",
+		"order": 1,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 53,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Tested F/O",
+		"item": "Takeoff Warning",
+		"order": 2,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 54,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "NTOP Or RDC F/O",
+		"item": "Takeoff Power",
+		"order": 3,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 55,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked F/O",
+		"item": "Flight Instruments",
+		"order": 4,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 56,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Full Travel F/O",
+		"item": "Hydraulic #3 Full Travel",
+		"order": 5,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 57,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Yaw Damper",
+		"order": 6,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 58,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Received PF",
+		"item": "Clearances",
+		"order": 7,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 59,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Received PNF",
+		"item": "Cabin Clear",
+		"order": 8,
+		"checklist_phase": 4
+	}
+}, {
+	"pk": 60,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "White F/O",
+		"item": "Anti-Collision",
+		"order": 1,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 61,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Landing Lights",
+		"order": 2,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 62,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Pitot/Static Isolation Valve",
+		"order": 3,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 63,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required F/O",
+		"item": "Bleeds",
+		"order": 4,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 64,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set & Checked F/O",
+		"item": "GA, HDG, ALTSEL",
+		"order": 5,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 65,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Clear F/O",
+		"item": "Caution Panel and Warning Lights",
+		"order": 6,
+		"checklist_phase": 5
+	}
+}, {
+	"pk": 66,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Std/__hPa PF & PNF",
+		"item": "Altimeters",
+		"order": 1,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 67,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required PNF",
+		"item": "Ice Protection",
+		"order": 2,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 68,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Checked PNF",
+		"item": "Pressurization",
+		"order": 3,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 69,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Normal PNF",
+		"item": "STBY HYD, PTU",
+		"order": 4,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 70,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off PNF",
+		"item": "Fuel Pumps",
+		"order": 5,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 71,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off PNF",
+		"item": "Auto Feather",
+		"order": 6,
+		"checklist_phase": 7
+	}
+}, {
+	"pk": 72,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set PNF",
+		"item": "Pressurization",
+		"order": 1,
+		"checklist_phase": 8
+	}
+}, {
+	"pk": 73,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required PNF",
+		"item": "GPWS Flaps",
+		"order": 2,
+		"checklist_phase": 8
+	}
+}, {
+	"pk": 74,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Table/Set PNF",
+		"item": "Briefing, MSA, Speeds, DH/MDA",
+		"order": 3,
+		"checklist_phase": 8
+	}
+}, {
+	"pk": 75,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Std/__hPa PF & PNF",
+		"item": "Altimeters",
+		"order": 1,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 76,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off PNF",
+		"item": "Fuel Transfer",
+		"order": 2,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 77,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On PNF",
+		"item": "Fuel Pumps",
+		"order": 3,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 78,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On PNF",
+		"item": "STBY HYD, PTU",
+		"order": 4,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 79,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On, Normal Indication PNF",
+		"item": "Hydraulics",
+		"order": 5,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 80,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On PNF",
+		"item": "Passenger Signs",
+		"order": 6,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 81,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Clear PNF",
+		"item": "Caution and Warning Lights",
+		"order": 7,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 82,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Received PNF",
+		"item": "Cabin Clear",
+		"order": 8,
+		"checklist_phase": 9
+	}
+}, {
+	"pk": 83,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required PNF",
+		"item": "Ice Protection",
+		"order": 1,
+		"checklist_phase": 10
+	}
+}, {
+	"pk": 84,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Down 3 Green PF",
+		"item": "Landing Gear",
+		"order": 2,
+		"checklist_phase": 10
+	}
+}, {
+	"pk": 85,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "1050 or Max PNF",
+		"item": "Condition Levers",
+		"order": 3,
+		"checklist_phase": 10
+	}
+}, {
+	"pk": 86,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Set & Checked PF",
+		"item": "Flaps",
+		"order": 4,
+		"checklist_phase": 10
+	}
+}, {
+	"pk": 87,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Min/As Required PNF",
+		"item": "Bleeds",
+		"order": 5,
+		"checklist_phase": 10
+	}
+}, {
+	"pk": 88,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Control lock",
+		"order": 1,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 89,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Red F/O",
+		"item": "Anti-Collision",
+		"order": 2,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 90,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "0 F/O",
+		"item": "Flaps",
+		"order": 3,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 91,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Standby F/O",
+		"item": "Weather Radar",
+		"order": 4,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 92,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Fuel Pumps",
+		"order": 5,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 93,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Taxi F/O",
+		"item": "Flight/Taxi",
+		"order": 6,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 94,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Ice Protection",
+		"order": 7,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 95,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Tie F/O",
+		"item": "Main Bus Tie",
+		"order": 8,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 96,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Yaw Damper",
+		"order": 9,
+		"checklist_phase": 11
+	}
+}, {
+	"pk": 97,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "On F/O",
+		"item": "Park Brake",
+		"order": 1,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 98,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Normal F/O",
+		"item": "HYD Pump/PTU",
+		"order": 2,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 99,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Disc/Start & Feather F/O",
+		"item": "Power and Condition Levers",
+		"order": 3,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 100,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Nose Steering",
+		"order": 4,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 101,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "WXR",
+		"order": 5,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 102,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Standby F/O",
+		"item": "XPDR/TCAS",
+		"order": 6,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 103,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Minimum/Off F/O",
+		"item": "Bleeds",
+		"order": 7,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 104,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required F/O",
+		"item": "GPU/APU",
+		"order": 8,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 105,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Fuel Off F/O",
+		"item": "Condition Levers",
+		"order": 9,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 106,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Off F/O",
+		"item": "Passenger Signs",
+		"order": 10,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 107,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required F/O",
+		"item": "Lights",
+		"order": 11,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 108,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As Required F/O",
+		"item": "Battery Master",
+		"order": 12,
+		"checklist_phase": 12
+	}
+}, {
+	"pk": 109,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "As RQRD",
+		"item": "Console/Floor lights",
+		"order": 13,
+		"checklist_phase": 14
+	}
+}, {
+	"pk": 110,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Cessna Checklist Item 1 action",
+		"item": "Cessna Checklist Item 1",
+		"order": 24,
+		"checklist_phase": 13
+	}
+}, {
+	"pk": 111,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Cherokee Checklist Item 1 action",
+		"item": "Cherokee Checklist Item 1",
+		"order": 25,
+		"checklist_phase": 14
+	}
+}, {
+	"pk": 112,
+	"model": "core.checkliststep",
+	"fields": {
+		"action": "Airbus Checklist Item 1 action",
+		"item": "Airbus Checklist Item 1",
+		"order": 26,
+		"checklist_phase": 15
+	}
+}]

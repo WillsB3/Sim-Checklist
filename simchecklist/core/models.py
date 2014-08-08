@@ -30,7 +30,7 @@ class Checklist(models.Model):
 class ChecklistPhase(OrderedModel):
     checklist = models.ForeignKey(Checklist, related_name='phases')
     name = models.CharField(max_length=200)
-    slug = AutoSlugField(populate_from='name', unique_with='aircraft')
+    slug = AutoSlugField(populate_from='name', unique_with='checklist')
 
     def __unicode__(self):
         return self.name
