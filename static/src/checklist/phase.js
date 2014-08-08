@@ -46,7 +46,7 @@
 			console.log('checklist.phase module running...');
 		})
 
-		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData, phaseRunData, STEP_STATES, STEP_STATE_ORDER) {
+		.controller('ChecklistPhaseCtrl', function ($scope, $state, $stateParams, checklistData, phaseIndex, phaseData, phaseRunData, STEP_STATES, STEP_STATE_ORDER, ChecklistRunService) {
 
 			this.initialize = function () {
 				$scope.$watch('run.phases[' + phaseIndex + ']', this.onRunDataModified.bind(this), true);
@@ -56,6 +56,7 @@
 				console.warn('phaseCtrl:onPhaseRunDataModified()', newValue, oldValue);
 				$scope.phaseRun = this.getPhaseRunData($scope.run);
 				this.updateProgress();
+				ChecklistRunService.saveRun($scope.run);
 			};
 
 			this.getPhaseRunData = function (runData) {

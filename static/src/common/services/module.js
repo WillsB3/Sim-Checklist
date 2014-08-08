@@ -2,6 +2,9 @@
 
 	'use strict';
 
-	angular.module('checklist.common.services', []);
+	angular.module('checklist.common.services', [
+		'LocalStorageModule',
+		'checklist.common.constants'
+	]);
 
 }());

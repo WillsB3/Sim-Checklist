@@ -9,12 +9,12 @@
 			'ngAnimate',
 			'ui.router',
 			'ngTouch',
+			'angular-loading-bar',
 			'checklist.common.directives',
 			'checklist.aircraft',
 			'checklist.checklists',
 			'checklist.detail',
-			'checklist.phase',
-			'angular-loading-bar'
+			'checklist.phase'
 		])
 
 		// configure routes

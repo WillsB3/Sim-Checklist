@@ -6,9 +6,7 @@
 	// =============================================================================
 	angular.module('checklist.detail', [
 			'ui.router',
-			'checklist.common.constants',
-			'checklist.common.services',
-			'LocalStorageModule'
+			'checklist.common.services'
 		])
 
 		// configure routes
@@ -34,6 +32,7 @@
 							if (!run) {
 								run = ChecklistRunService.newRun(checklistData);
 							}
+
 							return run;
 						}
 					}
@@ -73,57 +72,7 @@
 
 			this.newRun = function () {
 				$scope.run = ChecklistRunService.newRun($scope.checklist);
-				ChecklistRunService.saveRun($scope.run);
 			};
-		})
-
-		.service('ChecklistRunService', function checklistRunService(localStorageService, STEP_STATES) {
-
-			var service = {};
-
-			service.newRun = function (checklistData) {
-				var run = {
-					checklistId: checklistData.id,
-					id: Date.now(),
-					phases: [],
-					isNew: true
-				};
-
-				angular.forEach(checklistData.phases, function (phaseValue, phaseKey) {
-					var checklistPhaseData = phaseValue;
-					var runPhaseData = {
-						steps: []
-					};
-
-					angular.forEach(phaseValue.steps, function (stepValue, stepKey) {
-						runPhaseData.steps.push({
-							id: stepValue.id,
-							state: STEP_STATES.INITIAL
-						});
-					});
-
-					run.phases.push(runPhaseData);
-				});
-
-				return run;
-			};
-
-			service.getRun = function (checklistId) {
-				var runString = localStorageService.get('checklist-run:' + checklistId);
-
-				if (runString) {
-					return angular.fromJson(runString);
-				} else {
-					return undefined;
-				}
-			};
-
-			service.saveRun = function (runData) {
-				runData.isNew = false;
-				return localStorageService.set('checklist-run:' + runData.checklistId, angular.toJson(runData));
-			};
-
-			return service;
 		});
 
 }());
