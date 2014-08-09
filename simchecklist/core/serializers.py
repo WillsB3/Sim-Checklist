@@ -36,4 +36,4 @@ class ChecklistSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Checklist
-        fields = ('id', 'aircraft', 'phases')
+        fields = ('id', 'aircraft', 'phases', 'published')

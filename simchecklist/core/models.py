@@ -22,6 +22,7 @@ class Aircraft(models.Model):
 
 class Checklist(models.Model):
     aircraft = models.OneToOneField(Aircraft, related_name='checklist')
+    published = models.BooleanField(default=False)
 
     def __unicode__(self):
         return "{aircraft} checklist".format(aircraft=self.aircraft)
