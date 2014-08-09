@@ -18,13 +18,11 @@ class ChecklistPhaseInline(NestedStackedInline):
     extra = 1
     fk_name = 'checklist'
     inlines = [ChecklistStepInline]
-    exclude = ('slug',)
 
 
 class ChecklistAdmin(NestedModelAdmin):
     model = models.Checklist
     inlines = [ChecklistPhaseInline]
-    exclude = ('first_phase_slug',)
 
 
 class ChecklistStepAdmin(OrderedModelAdmin):
