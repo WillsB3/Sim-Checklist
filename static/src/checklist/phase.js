@@ -55,7 +55,7 @@
 			this.onRunDataModified = function (newValue, oldValue) {
 				console.warn('phaseCtrl:onPhaseRunDataModified()', newValue, oldValue);
 				$scope.phaseRun = this.getPhaseRunData($scope.run);
-				this.updateProgress();
+				this.updatePhaseProgress();
 				ChecklistRunService.saveRun($scope.run);
 			};
 
@@ -63,44 +63,52 @@
 				return runData.phases[phaseIndex];
 			};
 
-			this.getProgressStyles = function () {
+			this.getPhaseProgressStyles = function () {
 				var styles = {};
 				var prefixed = Modernizr.prefixed('transform');
 				var css = prefixed.replace(/([A-Z])/g, function(str,m1){ return '-' + m1.toLowerCase(); }).replace(/^ms-/,'-ms-');
-				styles[css] = 'translateX(' + $scope.progress.toFixed(2) + '%)';
+				styles[css] = 'translateX(' + $scope.phaseProgress.toFixed(2) + '%)';
 				return styles;
 			};
 
-			this.updateProgress = function () {
+			this.updatePhaseProgress = function () {
 				var totalSteps = $scope.phaseRun.steps.length;
 				var completedSteps = _.filter($scope.phaseRun.steps, function (step) {
 					return step.state !== STEP_STATES.INITIAL;
 				});
 
-				$scope.progress = completedSteps.length / totalSteps * 100;
-				$scope.progressStyles = this.getProgressStyles();
+				$scope.phaseProgress = completedSteps.length / totalSteps * 100;
+				$scope.phaseProgressStyles = this.getPhaseProgressStyles();
 			};
 
-			this.getPrevPhaseSlug = function () {
-				var currentPhaseIndex;
-				var nextPhaseConfig;
-				var nextPhaseIndex;
-				var nextPhaseSlug;
-				var numPhases = $scope.checklist.phases.length;
+			this.getPhase = function (index) {
+				var phase;
 
-				currentPhaseIndex = _.findIndex($scope.checklist.phases, function (phase) {
-					return phase.id === $scope.phase.id;
-				});
-
-				nextPhaseIndex = currentPhaseIndex - 1;
-
-				if (currentPhaseIndex === 0) {
-					return;
+				try {
+					phase = $scope.checklist.phases[index];
+				} catch (e) {
+					if (e instanceof RangeError) {
+						return undefined;
+					} else {
+						throw e;
+					}
 				}
 
-				nextPhaseConfig = $scope.checklist.phases[nextPhaseIndex];
+				return $scope.checklist.phases[index];
+			};
 
-				return nextPhaseConfig.slug;
+			this.getAdjacentPhaseSlug = function (direction) {
+				var currentIndex = phaseIndex;
+				var nextPhaseConfig;
+				var numPhases = $scope.checklist.phases.length;
+				var desiredPhaseIndex =
+					(direction.toUpperCase() === 'NEXT') ?
+						currentIndex + 1:
+						currentIndex - 1;
+
+				nextPhaseConfig = this.getPhase(desiredPhaseIndex);
+
+				return nextPhaseConfig ? nextPhaseConfig.slug : undefined;
 			};
 
 			this.getNextPhaseSlug = function () {
@@ -142,7 +150,7 @@
 
 				stateObject.state = STEP_STATES[STEP_STATE_ORDER[newIndex]];
 
-				this.updateProgress();
+				this.updatePhaseProgress();
 			};
 
 			/////////////
@@ -152,7 +160,10 @@
 			$scope.phase = phaseData;
 			$scope.phaseRun = phaseRunData;
 			$scope.phaseIndex = phaseIndex;
-			$scope.progress = 0;
+			$scope.phaseProgress = 0;
+
+			$scope.prevPhaseSlug = this.getAdjacentPhaseSlug('PREV');
+			$scope.nextPhaseSlug = this.getAdjacentPhaseSlug('NEXT');
 
 			this.initialize();
 		});

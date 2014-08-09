@@ -1,7 +1,7 @@
 <div class="phase">
 	<h2 ng-bind="phase.name" class="phase__title"></h2>
 	<div ng-if="!phaseRun.isNew">
-		<button ng-click="checklistCtrl.newRun()" class="btn">Restart checklist</button>
+		<a ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getPhase(0).slug })" ng-click="checklistCtrl.newRun()" class="btn">Restart checklist</a>
 	</div>
 	<div class="checklist">
 		<table>
@@ -25,8 +25,8 @@
 		</table>
 	</div>
 	<nav class="phase__navigation">
-		<a ng-if="phaseCtrl.getPrevPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getPrevPhaseSlug() })" rel="prev" sc-scroll-to-top>Previous Phase</a>
-		<a ng-if="phaseCtrl.getNextPhaseSlug()" ui-sref="checklist-phase({ phaseSlug: phaseCtrl.getNextPhaseSlug() })" rel="next" sc-scroll-to-top>Next Phase</a>
+		<a ng-if="nextPhaseSlug" ui-sref="checklist-phase({ phaseSlug: nextPhaseSlug })" rel="prev" sc-scroll-to-top>Previous Phase</a>
+		<a ng-if="prevPhaseSlug" ui-sref="checklist-phase({ phaseSlug: prevPhaseSlug })" rel="next" sc-scroll-to-top>Next Phase</a>
 	</nav>
 	<div class="phase-progress">
 		<div class="phase-progress__bar" ng-style="phaseCtrl.getProgressStyles()">
