@@ -59,17 +59,9 @@
 
 			// Scope watchers
 			// =============================
-			$scope.$watch('run', this.onRunDataModified, true);
 
 			// Controller functions
 			// =============================
-			this.onRunDataModified = function (newValue, oldValue) {
-				console.warn('checklistCtrl:onRunDataModified', newValue, oldValue);
-				if (newValue) {
-					ChecklistRunService.saveRun(newValue);
-				}
-			};
-
 			this.newRun = function () {
 				$scope.run = ChecklistRunService.newRun($scope.checklist);
 			};
