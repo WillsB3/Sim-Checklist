@@ -29,7 +29,7 @@
 		<a ng-if="prevPhaseSlug" ui-sref="checklist-phase({ phaseSlug: prevPhaseSlug })" rel="next" sc-scroll-to-top>Next Phase</a>
 	</nav>
 	<div class="phase-progress">
-		<div class="phase-progress__bar" ng-style="phaseCtrl.getProgressStyles()">
+		<div class="phase-progress__bar" ng-style="phaseCtrl.getPhaseProgressStyles()">
 			<div class="phase-progress__peg"></div>
 		</div>
 	</div>
