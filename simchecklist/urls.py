@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^api/', include(router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^_ah/', include('djangae.urls')),
     url(r'^', include(core.urls)),
 )
 

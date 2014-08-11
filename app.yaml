@@ -1,0 +1,42 @@
+application: s~simchecklist
+version: 1-2
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+
+inbound_services:
+- warmup
+
+libraries:
+- name: django
+  version: 1.5
+
+handlers:
+- url: /favicon.ico
+  static_files: static/assets/icons/favicon.ico
+  upload: static/assets/icons/favicon.ico
+  expiration: 7d
+
+- url: /static
+  static_dir: static/build
+  expiration: '0'
+
+- url: /_ah/(mapreduce|queue|warmup).*
+    script: simchecklist.wsgi.application
+    login: admin
+
+- url: /.*
+  script: simchecklist.wsgi.application
+
+skip_files:
+- ^(.*/)?.*\.git
+- ^(.*/)?.*\.py[co]
+- ^\.gaedata
+- ^grunt*
+- ^submodules*
+- ^node_modules*
+- ^static/src*
+- ^static/local*
