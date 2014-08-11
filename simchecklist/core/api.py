@@ -13,10 +13,7 @@ class AircraftViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.AircraftSerializer
 
     def get_queryset(self):
-        checklists = models.Checklist.objects.all()
-        # return models.ChecklistPhase.objects.filter(checklist__aircraft__id=obj.id)[0].slug
-        # return models.Aircraft.objects.filter(published=True)
-        return models.Aircraft.objects.all()
+        return models.Aircraft.objects.filter(checklist__published=True)
 
 class ChecklistPhaseViewSet(viewsets.ModelViewSet):
     model = models.ChecklistPhase
