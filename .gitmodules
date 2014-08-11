@@ -1,0 +1,3 @@
+[submodule "submodules/djangae"]
+	path = submodules/djangae
+	url = https://WillsB3@github.com/lukebpotato/djangae.git
