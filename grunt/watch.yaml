@@ -8,7 +8,7 @@ scss:
 
 css:
   files:
-    - '<%= local.css %>/<%= package.name %>-tmp.css'
+    - '<%= tmp.css %>/<%= package.name %>-tmp.css'
   tasks:
     - 'autoprefixer:dev'
   options:

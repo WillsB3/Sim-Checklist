@@ -20,7 +20,7 @@
 				.state('checklist-phase', {
 					parent: 'checklist-detail',
 					url: '/phase/:phaseSlug',
-					templateUrl: 'static/src/checklist/phase.html',
+					templateUrl: 'static/js/checklist/phase.html',
 					controller: 'ChecklistPhaseCtrl as phaseCtrl',
 					resolve: {
 						phaseIndex: function ($stateParams, checklistData) {

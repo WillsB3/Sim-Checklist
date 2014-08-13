@@ -14,7 +14,7 @@
 
 				.state('checklist-list', {
 					url: "/aircraft/:aircraftId/checklists",
-					templateUrl: "static/src/checklists/checklists.html",
+					templateUrl: "static/js/checklists/checklists.html",
 					controller: 'ChecklistListCtrl'
 				});
 

@@ -17,7 +17,7 @@
 
 				.state('checklist-detail', {
 					url: '/aircraft/:aircraftId',
-					templateUrl: 'static/src/checklist/checklist.html',
+					templateUrl: 'static/js/checklist/checklist.html',
 					controller: 'ChecklistDetailCtrl as checklistCtrl',
 					resolve: {
 						checklistData: function($stateParams, ChecklistService) {

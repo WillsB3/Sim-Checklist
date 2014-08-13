@@ -49,7 +49,7 @@ h1 {
 	}
 
 	&:before {
-		background-image: url('/static/assets/icons/checkmark-white.svg');
+		background-image: url('/static/assets/icons/standalone/checkmark-white.svg');
 		background-repeat: no-repeat;
 		background-size: $iconsize;
 		content: "";

@@ -15,7 +15,7 @@
 
 				.state('aircraft-list', {
 					url: '/aircraft',
-					templateUrl: 'static/src/aircraft/aircraft.html',
+					templateUrl: 'static/js/aircraft/aircraft.html',
 					controller: 'AircraftListCtrl'
 				});
 
