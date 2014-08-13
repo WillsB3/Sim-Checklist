@@ -22,3 +22,13 @@ dev:
       src:
         - 'standalone'
       dest: '<%= local.assets %>/icons'
+
+build:
+  files:
+    -
+      expand: true
+      cwd: '<%= src.root %>'
+      src:
+        - 'js'
+        - 'bower_components'
+      dest: '<%= build.root %>'

@@ -4,12 +4,12 @@ dev:
     - 'clean:dev'
     - 'clean:tmp'
     - 'symlink:dev'
-    - 'sprite'
-    - 'copy:svg-dev'
+    # - 'sprite'
+    # - 'copy:svg-dev'
     - 'sass:dev'
     - 'autoprefixer:dev'
     - 'jshint'
-    - 'copy:favicon'
+    - 'copy:static-root-dev'
     - 'watch'
 
 build:
@@ -17,14 +17,15 @@ build:
   tasks:
     - 'clean:build'
     - 'clean:tmp'
-    - 'sprite'
-    - 'copy:svg-build'
+    # - 'sprite'
+    # - 'copy:svg-build'
     - 'sass:build'
     - 'autoprefixer:build'
     - 'jshint'
-    - 'modernizr'
-    - 'requirejs'
+    # - 'modernizr'
+    - 'symlink:build'
     - 'copy:assets'
+    - 'copy:static-root-build'
     - 'clean:tmp'
 
 sprite:

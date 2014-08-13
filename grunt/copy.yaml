@@ -13,9 +13,23 @@ assets:
         - 'icons/standalone/**/*'
       dest: '<%= build.assets %>'
 
-favicon:
-  src: '<%= src.root %>/favicon.ico'
-  dest: '<%= local.root %>/favicon.ico'
+static-root-dev:
+  files:
+    -
+      expand: true
+      cwd: '<%= src.root %>'
+      src: '*.*'
+      dest: '<%= local.root %>'
+      filter: 'isFile'
+
+static-root-build:
+  files:
+    -
+      expand: true
+      cwd: '<%= src.root %>'
+      src: '*.*'
+      dest: '<%= build.root %>'
+      filter: 'isFile'
 
 svgcss:
   src: '<%= tmp.css %>/sprite.css'

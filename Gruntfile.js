@@ -16,8 +16,7 @@ module.exports = function(grunt) {
 				root: 'static/build',
 				assets: 'static/build/assets',
 				css: 'static/build/css',
-				js: 'static/build/js',
-				tmp: 'static/tmp'
+				js: 'static/build/js'
 			},
 			local: {
 				root: 'static/local',

@@ -25,13 +25,18 @@ js:
   - '<%= src.js %>/**/*.js'
   tasks:
     - 'jshint'
-    - 'jscs'
   options:
     livereload: true
 
-favicon:
-  files: '<%= src.root %>/favicon.ico'
-  tasks: 'copy:favicon'
+static-root:
+  files:
+    -
+      expand: true
+      cwd: '<%= src.root %>'
+      src: '*.*'
+      dest: '<%= local.root %>'
+      filter: 'isFile'
+  tasks: 'copy:static-root'
 
 svg:
   files: '<%= src.assets %>/icons/sprite/*.svg'

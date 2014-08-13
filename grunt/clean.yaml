@@ -1,7 +1,7 @@
 build:
   src:
     - '<%= build.root %>'
-    - '<%= build.tmp %>'
+    - '<%= tmp.root %>'
 
 dev:
   src:

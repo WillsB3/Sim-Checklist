@@ -1,6 +1,6 @@
  dist:
     devFile : '<%= src.bower%>/modernizr/modernizr.js'
-    outputFile : '<%= build.tmp %>/modernizr.build.js'
+    outputFile : '<%= tmp.root %>/modernizr.build.js'
     files:
       src:
         - '<%= src.js %>/**/*.js'
