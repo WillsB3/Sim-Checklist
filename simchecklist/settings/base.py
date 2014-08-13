@@ -8,10 +8,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# This dynamically discovers the path to the project
+# Build paths inside the project like this: os.path.join(PROJECT_PATH, ...)
+PROJECT_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -45,20 +46,13 @@ INSTALLED_APPS = (
     'simchecklist.core',
 )
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 # AUTH_USER_MODEL = 'core.User'
 
+TEMPLATE_DIRS = [os.path.join(PROJECT_PATH, 'templates')]
 # Django Rest Framework
 
 REST_FRAMEWORK = {
-    # Use hyperlinked styles by default.
-    # Only used if the `serializer_class` attribute is not set on a view.
-    # 'DEFAULT_MODEL_SERIALIZER_CLASS':
-        # 'rest_framework.serializers.HyperlinkedModelSerializer',
-
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticatedOrReadOnly',),
     'PAGINATE_BY': 10
@@ -84,7 +78,7 @@ WSGI_APPLICATION = 'simchecklist.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(PROJECT_PATH, 'db.sqlite3'),
     }
 }
 
@@ -100,9 +94,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# This dynamically discovers the path to the project
-PROJECT_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

@@ -1,0 +1,13 @@
+Django==1.6.5
+Pygments==1.6
+South==1.0
+bpython==0.13.1
+django-autoslug==1.7.2
+django-debug-toolbar==1.2.1
+django-filter==0.7
+-e git://github.com/silverfix/django-nested-inlines.git@b0b6b63dc82a38d7ee37921de868ac20b977c66a#egg=django_nested_inlines-master
+django-ordered-model==0.4.0
+djangorestframework==2.3.13
+sqlparse==0.1.11
+wsgiref==0.1.2
+dj-static==0.0.6
