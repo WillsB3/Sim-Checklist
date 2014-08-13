@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="{{ STATIC_URL }}assets/icons/favicon.ico" />
 		<link rel="stylesheet" href="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.css">
-		<link rel="stylesheet" href="{{ STATIC_URL }}build/css/simchecklist-prefixed.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/simchecklist.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
 	</head>
 	<body ng-app="checklist">
@@ -45,22 +45,22 @@
 		<script src="{{ STATIC_URL }}src/app.js"></script>
 
 		<!-- Angular common -->
-		<script src="{{ STATIC_URL }}src/common/constants/module.js"></script>
-		<script src="{{ STATIC_URL }}src/common/constants/stepStates.js"></script>
+		<script src="{{ STATIC_URL }}js/common/constants/module.js"></script>
+		<script src="{{ STATIC_URL }}js/common/constants/stepStates.js"></script>
 
-		<script src="{{ STATIC_URL }}src/common/directives/module.js"></script>
-		<script src="{{ STATIC_URL }}src/common/directives/scRightClick.js"></script>
-		<script src="{{ STATIC_URL }}src/common/directives/scScrollToTop.js"></script>
+		<script src="{{ STATIC_URL }}js/common/directives/module.js"></script>
+		<script src="{{ STATIC_URL }}js/common/directives/scRightClick.js"></script>
+		<script src="{{ STATIC_URL }}js/common/directives/scScrollToTop.js"></script>
 
-		<script src="{{ STATIC_URL }}src/common/services/module.js"></script>
-		<script src="{{ STATIC_URL }}src/common/services/checklistService.js"></script>
-		<script src="{{ STATIC_URL }}src/common/services/checklistRunService.js"></script>
+		<script src="{{ STATIC_URL }}js/common/services/module.js"></script>
+		<script src="{{ STATIC_URL }}js/common/services/checklistService.js"></script>
+		<script src="{{ STATIC_URL }}js/common/services/checklistRunService.js"></script>
 
 		<!-- Angular application feature modules -->
-		<script src="{{ STATIC_URL }}src/aircraft/aircraft.js"></script>
-		<script src="{{ STATIC_URL }}src/checklists/checklists.js"></script>
-		<script src="{{ STATIC_URL }}src/checklist/checklist.js"></script>
-		<script src="{{ STATIC_URL }}src/checklist/phase.js"></script>
+		<script src="{{ STATIC_URL }}js/aircraft/aircraft.js"></script>
+		<script src="{{ STATIC_URL }}js/checklists/checklists.js"></script>
+		<script src="{{ STATIC_URL }}js/checklist/checklist.js"></script>
+		<script src="{{ STATIC_URL }}js/checklist/phase.js"></script>
 
 		<!-- Google Analytics -->
 		<script>
