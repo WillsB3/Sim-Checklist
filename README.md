@@ -15,7 +15,7 @@ todo
 The instrucitons below detail how to get up and running using virtualenvwrapper, so this assumes you already have this installed. Once you have checked out the repo, `cd` into the project folder and run the following:
 
 1. `$ mkvirtualenv simchecklist`
-2. `$ pip install -r requirements.txt`
+2. `$ pip install -r requirements/local.txt`
 3. `$ npm install`
 4. `$ bower install`
 5. `python manage.py syncdb`
