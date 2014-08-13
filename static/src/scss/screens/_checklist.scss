@@ -87,19 +87,19 @@
 }
 
 .btn-checklist-state--initial {
-	background-image: url('/static/assets/icons/initial.svg');
+	background-image: url('/static/assets/icons/standalone/initial.svg');
 }
 
 .btn-checklist-state--checked {
-	background-image: url('/static/assets/icons/check.svg');
+	background-image: url('/static/assets/icons/standalone/check.svg');
 }
 
 .btn-checklist-state--skipped {
-	background-image: url('/static/assets/icons/skip.svg');
+	background-image: url('/static/assets/icons/standalone/skip.svg');
 }
 
 .btn-checklist-state--failed {
-	background-image: url('/static/assets/icons/fail.svg');
+	background-image: url('/static/assets/icons/standalone/fail.svg');
 }
 
 .phase-progress {
