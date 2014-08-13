@@ -1,6 +1,13 @@
 dev:
   files:
-    '<%= build %>/css/<%= package.name %>.css' : '<%= scss %>/<%= package.name %>.scss'
+    '<%= local.css %>/<%= package.name %>-tmp.css' : '<%= src.scss %>/<%= package.name %>.scss'
   options:
     style: 'expanded'
     sourcemap: true
+
+build:
+  files:
+    '<%= build.css %>/<%= package.name %>-tmp.css' : '<%= src.scss %>/<%= package.name %>.scss'
+  options:
+    style: 'compressed'
+    sourcemap: false

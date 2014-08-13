@@ -1,2 +1,11 @@
 build:
-  - '<%= build %>'
+  src:
+    - '<%= build.root %>'
+    - '<%= build.tmp %>'
+
+dev:
+  src:
+    - '<%= local.root %>'
+
+tmp:
+  src: '<%= tmp.root %>'

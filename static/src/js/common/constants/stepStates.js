@@ -11,6 +11,6 @@
 			FAILED: 'failed'
 		})
 
-		.constant('STEP_STATE_ORDER', ['INITIAL', 'CHECKED', 'SKIPPED', 'FAILED'])
+		.constant('STEP_STATE_ORDER', ['INITIAL', 'CHECKED', 'SKIPPED', 'FAILED']);
 
 }());

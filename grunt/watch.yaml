@@ -1,34 +1,44 @@
 scss:
   files:
-    - '<%= scss %>/**/*.scss'
+    - '<%= src.scss %>/**/*.scss'
   tasks:
-    - 'sass'
+    - 'sass:dev'
   options:
     livereload: false
 
 css:
   files:
-    - '<%= build %>/css/<%= package.name %>.css'
+    - '<%= local.css %>/<%= package.name %>-tmp.css'
   tasks:
     - 'autoprefixer:dev'
   options:
     livereload: false
 
-
 css-prefixed:
   files:
-    - '<%= build %>/css/<%= package.name %>-prefixed.css'
+    - '<%= local.css %>/<%= package.name %>.css'
   options:
     livereload: true
 
 js:
   files:
-    - '<%= js %>/**/*.js'
+  - '<%= src.js %>/**/*.js'
   tasks:
-    - 'copy:javascript'
+    - 'jshint'
+    - 'jscs'
+  options:
+    livereload: true
 
-assets:
+favicon:
+  files: '<%= src.root %>/favicon.ico'
+  tasks: 'copy:favicon'
+
+svg:
+  files: '<%= src.assets %>/icons/sprite/*.svg'
+  tasks: 'sprite'
+
+sprite-image-dev:
   files:
-    - '<%= assets %>/**/*.*'
+  - '<%= tmp.assets %>/icons/sprite.svg'
   tasks:
-    - 'copy:assets'
+    - 'copy:svg-dev'

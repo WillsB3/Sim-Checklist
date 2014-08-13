@@ -1,7 +1,6 @@
-dist:
-  devFile: '<%= bower %>/modernizr/modernizr.js'
-  outputFile: '<%= build %>/js/modernizr.js'
-  tests:
-    - svg
-  extra: 
-    cssclasses: true
+ dist:
+    devFile : '<%= src.bower%>/modernizr/modernizr.js'
+    outputFile : '<%= build.tmp %>/modernizr.build.js'
+    files:
+      src:
+        - '<%= src.js %>/**/*.js'

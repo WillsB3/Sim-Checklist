@@ -1,0 +1,38 @@
+dev:
+  description: 'Start watching for changes to source files'
+  tasks:
+    - 'clean:dev'
+    - 'clean:tmp'
+    - 'symlink:dev'
+    - 'sprite'
+    - 'copy:svg-dev'
+    - 'sass:dev'
+    - 'autoprefixer:dev'
+    - 'jshint'
+    - 'copy:favicon'
+    - 'watch'
+
+build:
+  description: 'Create a build of the front-end in static/build'
+  tasks:
+    - 'clean:build'
+    - 'clean:tmp'
+    - 'sprite'
+    - 'copy:svg-build'
+    - 'sass:build'
+    - 'autoprefixer:build'
+    - 'jshint'
+    - 'modernizr'
+    - 'requirejs'
+    - 'copy:assets'
+    - 'clean:tmp'
+
+sprite:
+  description: 'Regenerate the svg and png sprite'
+  tasks:
+    - 'svg-sprites'
+    - 'replace:fix-sprite-path'
+    - 'copy:svgcss'
+
+default:
+  - dev

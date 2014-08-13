@@ -1,6 +1,13 @@
 *.py[cod]
-.sass-cache/
 .DS_Store
-node_modules/
-static/bower_components/
+.sass-cache
+
+node_modules
+bower_components
+
+static/build
+static/local
+static/tmp
+static/src/scss/_sprite.scss
+
 .idea
