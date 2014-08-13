@@ -1,0 +1,24 @@
+options:
+  overwrite: true
+
+dev:
+  files:
+    -
+      expand: true
+      cwd: '<%= src.root %>'
+      src:
+        - 'js'
+        - 'bower_components'
+      dest: '<%= local.root %>'
+    -
+      expand: true
+      cwd: '<%= src.root %>/assets'
+      src:
+        - 'images'
+      dest: '<%= local.assets %>'
+    -
+      expand: true
+      cwd: '<%= src.root %>/assets/icons'
+      src:
+        - 'standalone'
+      dest: '<%= local.assets %>/icons'

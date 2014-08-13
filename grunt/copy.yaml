@@ -1,18 +1,40 @@
-javascript:
-  files: 
-    - 
+assets:
+  files:
+    -
       expand: true
-      cwd: 'static/src/'
-      src: 
-        - '*'
-      dest: 'static/build/js/'
-      filter: 'isFile'
+      cwd: '<%= src.assets %>'
+      src:
+        - 'images/**/*'
+      dest: '<%= build.assets %>'
+    -
+      expand: true
+      cwd: '<%= src.assets %>'
+      src:
+        - 'icons/standalone/**/*'
+      dest: '<%= build.assets %>'
 
-assets: 
-    files: 
-    expand: true
-    cwd: 'static/assets/'
-    src: 
-        - '*'
-    dest: 'static/build/assets/'
-    filter: 'isFile'
+favicon:
+  src: '<%= src.root %>/favicon.ico'
+  dest: '<%= local.root %>/favicon.ico'
+
+svgcss:
+  src: '<%= tmp.css %>/sprite.css'
+  dest: '<%= src.scss %>/_sprite.scss'
+
+svg-dev:
+  files:
+    -
+      expand: true
+      cwd: '<%= tmp.assets %>/icons/sprite'
+      src:
+        - '**/*'
+      dest: '<%= local.assets %>/icons/sprite'
+
+svg-build:
+  files:
+    -
+      expand: true
+      cwd: '<%= tmp.assets %>/icons/sprite'
+      src:
+        - '**/*'
+      dest: '<%= build.assets %>/icons/sprite'

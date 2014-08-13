@@ -1,0 +1,8 @@
+options:
+  prefix: 'sprite'
+
+sprite:
+  options:
+    spriteElementPath: '<%= src.assets %>/icons/sprite'
+    spritePath: '<%= tmp.assets %>/icons/sprite/sprite.svg'
+    cssPath: '<%= tmp.css %>/sprite.css'

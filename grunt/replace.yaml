@@ -1,0 +1,7 @@
+fix-sprite-path:
+  src: '<%= tmp.css %>/sprite.css'
+  overwrite: true
+  replacements:
+    -
+      from: 'url("../../local/assets/'
+      to: 'url("/static/assets/'

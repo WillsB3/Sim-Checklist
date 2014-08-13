@@ -111,8 +111,11 @@
 
 	"maxerr"        : 100,      // Maximum errors before stopping.
 	"predef"        : [         // Extra globals.
+		"console",
+		"angular",
+		"_",
 		"$",
-		"console"
+		"Modernizr"
 	],
-	"indent"        : 4         // Specify indentation spacing
+	"indent"        : 2         // Specify indentation spacing
 }
