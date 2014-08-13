@@ -18,7 +18,8 @@ static-root-dev:
     -
       expand: true
       cwd: '<%= src.root %>'
-      src: '*.*'
+      src:
+        - '*.*'
       dest: '<%= local.root %>'
       filter: 'isFile'
 

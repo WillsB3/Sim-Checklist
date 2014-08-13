@@ -29,14 +29,13 @@ js:
     livereload: true
 
 static-root:
+  options:
+    cwd: '<%= src.root %>'
   files:
-    -
-      expand: true
-      cwd: '<%= src.root %>'
-      src: '*.*'
-      dest: '<%= local.root %>'
-      filter: 'isFile'
-  tasks: 'copy:static-root'
+    - '!*'
+    - '*.*'
+  filter: 'isFile'
+  tasks: 'copy:static-root-dev'
 
 svg:
   files: '<%= src.assets %>/icons/sprite/*.svg'
