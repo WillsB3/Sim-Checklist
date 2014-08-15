@@ -4,7 +4,10 @@
   "copyright": "2014",
   "version": "0.1.0",
   "description": "",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WillsB3/Sim-Checklist.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~0.8.2",
