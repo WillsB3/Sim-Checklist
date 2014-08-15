@@ -18,7 +18,7 @@ The instrucitons below detail how to get up and running using virtualenvwrapper,
 2. `$ pip install -r requirements/local.txt`
 3. `$ npm install`
 4. `$ bower install`
-5. `python manage.py syncdb`
+5. `$ python manage.py syncdb`
 
 With that setup out the way you should be good to get the development environment running as described next.
 
