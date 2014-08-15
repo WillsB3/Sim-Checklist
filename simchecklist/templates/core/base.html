@@ -10,7 +10,9 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="{{ STATIC_URL }}assets/icons/favicon.ico" />
+		{% if DEBUG %}
 		<link rel="stylesheet" href="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.css">
+		{% endif %}
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/simchecklist.css">
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
 	</head>
@@ -26,6 +28,8 @@
 		<div class="app-main">
 			<div ui-view class="app-container"></div>
 		</div>
+
+		{% if DEBUG %}
 
 		<!-- JavaScript assets -->
 		<!-- bower:js -->
@@ -61,6 +65,13 @@
 		<script src="{{ STATIC_URL }}js/checklists/checklists.js"></script>
 		<script src="{{ STATIC_URL }}js/checklist/checklist.js"></script>
 		<script src="{{ STATIC_URL }}js/checklist/phase.js"></script>
+
+		{% else %}
+
+		   <!-- TODO -->
+
+		{% endif %}
+
 
 		<!-- Google Analytics -->
 		<script>
