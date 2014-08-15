@@ -23,7 +23,6 @@ build:
     - 'autoprefixer:build'
     - 'jshint'
     # - 'modernizr'
-    - 'symlink:build'
     - 'copy:assets'
     - 'copy:static-root-build'
     - 'clean:tmp'

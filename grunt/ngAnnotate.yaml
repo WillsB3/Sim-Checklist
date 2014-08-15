@@ -1,0 +1,3 @@
+build:
+  files:
+    '<%= build.js %>/app.js': '<%= src.js %>/**/*.js'

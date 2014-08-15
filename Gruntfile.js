@@ -27,7 +27,8 @@ module.exports = function(grunt) {
 			tmp: {
 				root: 'static/tmp',
 				assets: 'static/tmp/assets',
-				css: 'static/tmp/css'
+				css: 'static/tmp/css',
+				js: 'static/tmp/js'
 			}
 		},
 		loadGruntTasks: {
