@@ -50,7 +50,7 @@
 
 	"asi"           : false,    // Tolerate Automatic Semicolon Insertion (no semicolons).
 	"boss"          : false,    // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
-	"debug"         : true,    // Allow debugger statements e.g. browser breakpoints.
+	"debug"         : false,    // Allow debugger statements e.g. browser breakpoints.
 	"eqnull"        : false,    // Tolerate use of `== null`.
 	"es5"           : false,    // Allow EcmaScript 5 syntax.
 	"esnext"        : false,    // Allow ES.next specific features such as `const` and `let`.
@@ -68,7 +68,7 @@
 	"proto"         : false,    // Tolerate __proto__ property. This property is deprecated.
 	"regexdash"     : false,    // Tolerate unescaped last dash i.e. `[-...]`.
 	"scripturl"     : false,    // Tolerate script-targeted URLs.
-	"smarttabs"     : false,    // Tolerate mixed tabs and spaces when the latter are used for alignmnent only.
+	"smarttabs"     : true,     // Tolerate mixed tabs and spaces when the latter are used for alignmnent only.
 	"shadow"        : false,    // Allows re-define variables later in code e.g. `var x=1; x=2;`.
 	"sub"           : false,    // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
 	"supernew"      : false,    // Tolerate `new function () { ... };` and `new Object;`.
@@ -84,9 +84,9 @@
 	"couch"         : false,    // Enable globals exposed by CouchDB.
 	"devel"         : false,    // Allow development statements e.g. `console.log();`.
 	"dojo"          : false,    // Enable globals exposed by Dojo Toolkit.
-	"jquery"        : false,    // Enable globals exposed by jQuery JavaScript library.
+	"jquery"        : true,     // Enable globals exposed by jQuery JavaScript library.
 	"mootools"      : false,    // Enable globals exposed by MooTools JavaScript framework.
-	"node"          : false,    // Enable globals available when code is running inside of the NodeJS runtime environment.
+	"node"          : true,     // Enable globals available when code is running inside of the NodeJS runtime environment.
 	"nonstandard"   : false,    // Define non-standard but widely adopted globals such as escape and unescape.
 	"prototypejs"   : false,    // Enable globals exposed by Prototype JavaScript framework.
 	"rhino"         : false,    // Enable globals available when your code is running inside of the Rhino runtime environment.
@@ -114,8 +114,9 @@
 		"console",
 		"angular",
 		"_",
-		"$",
-		"Modernizr"
+		"Modernizr",
+		"module",
+		"require"
 	],
-	"indent"        : 2         // Specify indentation spacing
+	"indent"        : 4         // Specify indentation spacing
 }

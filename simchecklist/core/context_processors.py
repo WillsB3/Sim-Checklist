@@ -1,7 +1,7 @@
 from django.config import settings
 
 
-def process_request(request):
+def debug(request):
     return {
         'DEBUG': settings.DEBUG
     }

@@ -10,10 +10,12 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="{{ STATIC_URL }}assets/icons/favicon.ico" />
-		{% if DEBUG %}
+
+		<!-- build:css css/app.css -->
 		<link rel="stylesheet" href="{{ STATIC_URL }}bower_components/angular-loading-bar/build/loading-bar.css">
-		{% endif %}
 		<link rel="stylesheet" href="{{ STATIC_URL }}css/simchecklist.css">
+		<!-- endbuild -->
+
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
 	</head>
 	<body ng-app="checklist">
@@ -28,10 +30,12 @@
 		<div class="app-main">
 			<div ui-view class="app-container"></div>
 		</div>
-
-		{% if DEBUG %}
+		<h1>DEBUG: {{ DEBUG }}</h1>
 
 		<!-- JavaScript assets -->
+
+		<!-- build:js js/app.js -->
+
 		<!-- bower:js -->
 		<script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.js"></script>
 		<script src="{{ STATIC_URL }}bower_components/modernizr/modernizr.js"></script>
@@ -66,12 +70,15 @@
 		<script src="{{ STATIC_URL }}js/checklist/checklist.js"></script>
 		<script src="{{ STATIC_URL }}js/checklist/phase.js"></script>
 
+		<!-- endbuild -->
+
+		{% if DEBUG %}
+
 		{% else %}
 
 		   <!-- TODO -->
 
 		{% endif %}
-
 
 		<!-- Google Analytics -->
 		<script>

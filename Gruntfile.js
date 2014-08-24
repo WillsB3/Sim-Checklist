@@ -36,4 +36,6 @@ module.exports = function(grunt) {
 			scope: 'devDependencies'
 		}
 	});
+
+	grunt.loadNpmTasks('grunt-debug-task');
 };
