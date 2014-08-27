@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>SimChecklist</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="/static/assets/icons/favicon.ico" />
+
+		<!-- build:css css/app.css -->
+		<link rel="stylesheet" href="/static/bower_components/angular-loading-bar/build/loading-bar.css">
+		<link rel="stylesheet" href="/static/css/simchecklist.css">
+		<!-- endbuild -->
+
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
+	</head>
+	<body ng-app="checklist">
+		<header class="app-header">
+			<div class="app-header-content">
+				<div class="app-container">
+					<h1 class="m-inline-block app-header__title"><a ui-sref="aircraft-list">SimChecklist</a></h1>
+				</div>
+			</div>
+		</header>
+
+		<div class="app-main">
+			<div ui-view class="app-container"></div>
+		</div>
+
+		<!-- JavaScript assets -->
+
+		<!-- build:js js/app.js -->
+
+		<!-- bower:js -->
+		<script src="/static/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/static/bower_components/modernizr/modernizr.js"></script>
+		<script src="/static/bower_components/angular/angular.js"></script>
+		<script src="/static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="/static/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+		<script src="/static/bower_components/angular-animate/angular-animate.js"></script>
+		<script src="/static/bower_components/angular-resource/angular-resource.js"></script>
+		<script src="/static/bower_components/angular-local-storage/angular-local-storage.js"></script>
+		<script src="/static/bower_components/lodash/dist/lodash.js"></script>
+		<script src="/static/bower_components/angular-touch/angular-touch.js"></script>
+		<!-- endbower -->
+
+		<!-- Angular App module -->
+		<script src="/static/js/app.js"></script>
+
+		<!-- Angular common -->
+		<script src="/static/js/common/constants/module.js"></script>
+		<script src="/static/js/common/constants/stepStates.js"></script>
+
+		<script src="/static/js/common/directives/module.js"></script>
+		<script src="/static/js/common/directives/scRightClick.js"></script>
+		<script src="/static/js/common/directives/scScrollToTop.js"></script>
+
+		<script src="/static/js/common/services/module.js"></script>
+		<script src="/static/js/common/services/checklistService.js"></script>
+		<script src="/static/js/common/services/checklistRunService.js"></script>
+
+		<!-- Angular application feature modules -->
+		<script src="/static/js/aircraft/aircraft.js"></script>
+		<script src="/static/js/checklists/checklists.js"></script>
+		<script src="/static/js/checklist/checklist.js"></script>
+		<script src="/static/js/checklist/phase.js"></script>
+
+		<!-- endbuild -->
+
+		<!-- Google Analytics -->
+		<script>
+			/* jshint ignore:start */
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-53691546-1', 'auto');
+			ga('send', 'pageview');
+			/* jshint ignore:end */
+		</script>
+	</body>
+</html>

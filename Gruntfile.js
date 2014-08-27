@@ -10,13 +10,15 @@ module.exports = function(grunt) {
 				assets: 'static/src/assets',
 				bower: 'static/src/bower_components',
 				js: 'static/src/js',
-				scss: 'static/src/scss'
+				scss: 'static/src/scss',
+				templates: 'static/src/templates'
 			},
 			build: {
 				root: 'static/build',
 				assets: 'static/build/assets',
 				css: 'static/build/css',
-				js: 'static/build/js'
+				js: 'static/build/js',
+				templates: 'static/build/templates'
 			},
 			local: {
 				root: 'static/local',
@@ -27,7 +29,9 @@ module.exports = function(grunt) {
 			tmp: {
 				root: 'static/tmp',
 				assets: 'static/tmp/assets',
-				css: 'static/tmp/css'
+				bower: 'static/tmp/bower_components',
+				css: 'static/tmp/css',
+				js: 'static/tmp/js'
 			}
 		},
 		loadGruntTasks: {
