@@ -3,14 +3,14 @@ options:
     - 'last 2 version'
 
 dev:
-  src: '<%= tmp.css %>/<%= package.name %>-tmp.css'
+  src: '<%= tmp.css %>/<%= package.name %>.css'
   dest: '<%= local.css %>/<%= package.name %>.css'
   options:
     cascade: true
     map: true
 
 build:
-  src: '<%= tmp.css %>/<%= package.name %>-tmp.css'
-  dest: '<%= build.css %>/<%= package.name %>.css'
+  src: '<%= tmp.css %>/<%= package.name %>.css'
+  dest: '<%= tmp.css %>/<%= package.name %>.css'
   options:
     map: false

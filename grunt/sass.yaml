@@ -1,13 +1,13 @@
 dev:
   files:
-    '<%= tmp.css %>/<%= package.name %>-tmp.css' : '<%= src.scss %>/<%= package.name %>.scss'
+    '<%= tmp.css %>/<%= package.name %>.css' : '<%= src.scss %>/<%= package.name %>.scss'
   options:
     style: 'expanded'
     sourcemap: true
 
 build:
   files:
-    '<%= tmp.css %>/<%= package.name %>-tmp.css' : '<%= src.scss %>/<%= package.name %>.scss'
+    '<%= tmp.css %>/<%= package.name %>.css' : '<%= src.scss %>/<%= package.name %>.scss'
   options:
     style: 'compressed'
     sourcemap: false
