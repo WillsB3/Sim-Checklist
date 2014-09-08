@@ -11,14 +11,14 @@ module.exports = function(grunt) {
 				bower: 'static/src/bower_components',
 				js: 'static/src/js',
 				scss: 'static/src/scss',
-				templates: 'static/src/templates'
+				templates: 'simchecklist/core/templates'
 			},
 			build: {
 				root: 'static/build',
 				assets: 'static/build/assets',
 				css: 'static/build/css',
 				js: 'static/build/js',
-				templates: 'static/build/templates'
+				templates: 'simchecklist/core/templates'
 			},
 			local: {
 				root: 'static/local',

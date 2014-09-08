@@ -24,10 +24,6 @@ build:
     - 'jshint'
     # - 'modernizr'
     # - 'symlink:build'
-    - 'useminPrepare'
-    - 'concat:generated'
-    - 'cssmin:generated'
-    - 'uglify:generated'
     - 'usemin'
     - 'copy:assets'
     - 'copy:static-root-build'
@@ -42,3 +38,10 @@ sprite:
 
 default:
   - dev
+
+usemin:
+  - 'useminPrepare'
+  - 'concat:generated'
+  - 'cssmin:generated'
+  - 'uglify:generated'
+  - 'usemin'

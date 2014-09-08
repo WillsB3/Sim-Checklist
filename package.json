@@ -23,12 +23,13 @@
     "grunt-jscs": "^0.6.2",
     "grunt-modernizr": "~0.5.2",
     "grunt-text-replace": "~0.3.12",
-    "grunt-usemin": "^2.3.0",
+    "grunt-usemin": "https://github.com/WillsB3/grunt-usemin/tarball/master",
     "grunt-wiredep": "~1.8.0",
     "load-grunt-config": "~0.12.0",
     "grunt-debug-task": "~0.1.5",
     "grunt-contrib-concat": "~0.5.0",
     "grunt-contrib-uglify": "~0.5.1",
-    "grunt-contrib-cssmin": "~0.10.0"
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-filerev": "~0.2.1"
   }
 }
