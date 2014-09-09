@@ -23,7 +23,7 @@
     "grunt-jscs": "^0.6.2",
     "grunt-modernizr": "~0.5.2",
     "grunt-text-replace": "~0.3.12",
-    "grunt-usemin": "https://github.com/WillsB3/grunt-usemin/tarball/master",
+    "grunt-usemin": "git+ssh://git@github.com:WillsB3/grunt-usemin.git",
     "grunt-wiredep": "~1.8.0",
     "load-grunt-config": "~0.12.0",
     "grunt-debug-task": "~0.1.5",

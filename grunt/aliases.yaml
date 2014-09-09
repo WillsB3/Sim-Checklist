@@ -39,7 +39,7 @@ sprite:
 default:
   - dev
 
-usemin:
+use:
   - 'useminPrepare'
   - 'concat:generated'
   - 'cssmin:generated'
