@@ -1,0 +1,10 @@
+options:
+  encoding: 'utf8'
+  algorithm: 'md5'
+  length: 8
+css:
+  src:
+    - '<%= build.css %>/*.css'
+js:
+  src:
+    - '<%= build.js %>/*.js'

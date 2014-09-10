@@ -29,6 +29,5 @@ build:
       expand: true
       cwd: '<%= src.root %>'
       src:
-        - 'js'
         - 'bower_components'
       dest: '<%= build.root %>'

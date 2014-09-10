@@ -23,8 +23,8 @@ build:
     - 'autoprefixer:build'
     - 'jshint'
     # - 'modernizr'
-    # - 'symlink:build'
-    - 'usemin'
+    - 'symlink:build'
+    - 'use'
     - 'copy:assets'
     - 'copy:static-root-build'
     - 'clean:tmp'
@@ -36,12 +36,15 @@ sprite:
     - 'replace:fix-sprite-path'
     - 'copy:svgcss'
 
+use:
+  description: 'Concat + Uglify CSS/JS and update base template'
+  tasks:
+    - 'useminPrepare'
+    - 'concat:generated'
+    - 'cssmin:generated'
+    - 'uglify:generated'
+    - 'filerev'
+    - 'usemin'
+
 default:
   - dev
-
-use:
-  - 'useminPrepare'
-  - 'concat:generated'
-  - 'cssmin:generated'
-  - 'uglify:generated'
-  - 'usemin'
