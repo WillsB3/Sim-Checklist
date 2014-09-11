@@ -6,7 +6,6 @@ module.exports = function(grunt, options) {
 		html: '<%= src.templates %>/base.html',
 		options: {
 			dest: '<%= build.root %>',
-			// root: '',
 			staging: '<%= tmp.root %>',
   			staticUrlRoot: '/static'
 		}

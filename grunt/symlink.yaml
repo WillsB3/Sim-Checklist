@@ -30,4 +30,4 @@ build:
       cwd: '<%= src.root %>'
       src:
         - 'bower_components'
-      dest: '<%= build.root %>'
+      dest: '<%= tmp.root %>'
