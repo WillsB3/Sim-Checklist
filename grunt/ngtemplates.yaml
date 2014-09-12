@@ -1,0 +1,8 @@
+app:
+  cwd: '<%= src.js %>'
+  src: '**/*.html'
+  dest: '<%= tmp.js %>/templates.js'
+  options:
+    module: 'checklist'
+    usemin: 'js/app.js'
+    prefix: '/static/js/'

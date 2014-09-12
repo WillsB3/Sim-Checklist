@@ -28,7 +28,7 @@ build:
     - 'use'
     - 'copy:assets'
     - 'copy:static-root-build'
-    - 'clean:tmp'
+    # - 'clean:tmp'
 
 sprite:
   description: 'Regenerate the svg and png sprite'
@@ -41,6 +41,7 @@ use:
   description: 'Concat + Uglify CSS/JS and update base template'
   tasks:
     - 'useminPrepare'
+    - 'ngtemplates'
     - 'concat:generated'
     - 'cssmin:generated'
     - 'uglify:generated'
