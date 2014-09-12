@@ -26,8 +26,9 @@
 
 		// application run block
 		// =============================================================================
-		.run(function () {
+		.run(function ($templateCache) {
 			console.log('simchecklist application module running...');
+			// $templateCache.put("/static/js/aircraft/aircraft.html", '<h1>Available Aircraft</h1>');
 		});
 
 }());

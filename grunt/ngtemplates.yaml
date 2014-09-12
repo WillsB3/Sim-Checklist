@@ -5,4 +5,4 @@ app:
   options:
     module: 'checklist'
     usemin: 'js/app.js'
-    prefix: '/static/js/'
+    prefix: 'static/js/'
