@@ -24,6 +24,7 @@ build:
     - 'jshint'
     # - 'modernizr'
     - 'symlink:build'
+    - 'ngAnnotate'
     - 'use'
     - 'copy:assets'
     - 'copy:static-root-build'
