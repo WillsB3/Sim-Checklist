@@ -1,0 +1,7 @@
+options:
+  files:
+    -'package.json'
+  commitFiles:
+    - 'package.json'
+    - 'bower.json'
+  pushTo: 'origin'

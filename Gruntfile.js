@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 	require('load-grunt-config')(grunt, {
 		init: true,
 		data: {
+			pkg: grunt.file.readJSON('package.json'),
 			src: {
 				root: 'static/src',
 				assets: 'static/src/assets',
@@ -40,6 +41,4 @@ module.exports = function(grunt) {
 			scope: 'devDependencies'
 		}
 	});
-
-	grunt.loadNpmTasks('grunt-debug-task');
 };
