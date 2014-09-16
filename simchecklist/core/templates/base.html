@@ -11,7 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="/static/assets/icons/favicon.ico" />
 
-		<link rel="stylesheet" href="/static/css/app.d93ad1a5.css">
+		<!-- build:css(static/tmp) css/app.css -->
+		<link rel="stylesheet" href="/static/bower_components/angular-loading-bar/build/loading-bar.css">
+		<link rel="stylesheet" href="/static/css/simchecklist.css">
+		<!-- endbuild -->
 
 		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500">
 	</head>
@@ -30,7 +33,43 @@
 
 		<!-- JavaScript assets -->
 
-		<script src="/static/js/app.aff937c6.js"></script>
+		<!-- build:js(static/tmp) js/app.js -->
+
+		<!-- bower:js -->
+		<script src="/static/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/static/bower_components/modernizr/modernizr.js"></script>
+		<script src="/static/bower_components/angular/angular.js"></script>
+		<script src="/static/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="/static/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+		<script src="/static/bower_components/angular-animate/angular-animate.js"></script>
+		<script src="/static/bower_components/angular-resource/angular-resource.js"></script>
+		<script src="/static/bower_components/angular-local-storage/angular-local-storage.js"></script>
+		<script src="/static/bower_components/lodash/dist/lodash.js"></script>
+		<script src="/static/bower_components/angular-touch/angular-touch.js"></script>
+		<!-- endbower -->
+
+		<!-- Angular App module -->
+		<script src="/static/js/app.js"></script>
+
+		<!-- Angular common -->
+		<script src="/static/js/common/constants/module.js"></script>
+		<script src="/static/js/common/constants/stepStates.js"></script>
+
+		<script src="/static/js/common/directives/module.js"></script>
+		<script src="/static/js/common/directives/scRightClick.js"></script>
+		<script src="/static/js/common/directives/scScrollToTop.js"></script>
+
+		<script src="/static/js/common/services/module.js"></script>
+		<script src="/static/js/common/services/checklistService.js"></script>
+		<script src="/static/js/common/services/checklistRunService.js"></script>
+
+		<!-- Angular application feature modules -->
+		<script src="/static/js/aircraft/aircraft.js"></script>
+		<script src="/static/js/checklists/checklists.js"></script>
+		<script src="/static/js/checklist/checklist.js"></script>
+		<script src="/static/js/checklist/phase.js"></script>
+
+		<!-- endbuild -->
 
 		<!-- Google Analytics -->
 		<script>
