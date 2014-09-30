@@ -433,7 +433,7 @@
     "fields": {
         "action": "On PNF", 
         "item": "DC External Power/APU", 
-        "order": 3, 
+        "order": 4, 
         "checklist_phase": 1
     }
 },
@@ -443,7 +443,7 @@
     "fields": {
         "action": "Checked PNF*", 
         "item": "Battery Temps", 
-        "order": 4, 
+        "order": 5, 
         "checklist_phase": 1
     }
 },
@@ -453,7 +453,7 @@
     "fields": {
         "action": "Checked PNF*", 
         "item": "Bus Voltages", 
-        "order": 5, 
+        "order": 6, 
         "checklist_phase": 1
     }
 },
@@ -463,7 +463,7 @@
     "fields": {
         "action": "Checked PNF*", 
         "item": "Safety Equipment", 
-        "order": 6, 
+        "order": 7, 
         "checklist_phase": 1
     }
 },
@@ -473,7 +473,7 @@
     "fields": {
         "action": "Checked 3 PNF*", 
         "item": "Landing Gear Lights & Pins", 
-        "order": 7, 
+        "order": 8, 
         "checklist_phase": 1
     }
 },
@@ -483,7 +483,7 @@
     "fields": {
         "action": "Green PNF*", 
         "item": "Engine Intake Doors", 
-        "order": 8, 
+        "order": 9, 
         "checklist_phase": 1
     }
 },
@@ -493,7 +493,7 @@
     "fields": {
         "action": "Checked In PNF", 
         "item": "Circuit Breakers", 
-        "order": 9, 
+        "order": 10, 
         "checklist_phase": 1
     }
 },
@@ -503,7 +503,7 @@
     "fields": {
         "action": "Norm PNF*", 
         "item": "Alt Gear Door, Inhibit Switch", 
-        "order": 10, 
+        "order": 11, 
         "checklist_phase": 1
     }
 },
@@ -513,7 +513,7 @@
     "fields": {
         "action": "Tested PNF*", 
         "item": "Fire and Smoke Detection", 
-        "order": 11, 
+        "order": 12, 
         "checklist_phase": 1
     }
 },
@@ -523,7 +523,7 @@
     "fields": {
         "action": "Off PNF", 
         "item": "Bleed Air", 
-        "order": 12, 
+        "order": 13, 
         "checklist_phase": 1
     }
 },
@@ -533,7 +533,7 @@
     "fields": {
         "action": "As Required PNF", 
         "item": "APU Bleeds", 
-        "order": 13, 
+        "order": 14, 
         "checklist_phase": 1
     }
 },
@@ -543,7 +543,7 @@
     "fields": {
         "action": "On PNF*", 
         "item": "Recirc Fan", 
-        "order": 14, 
+        "order": 15, 
         "checklist_phase": 1
     }
 },
@@ -553,7 +553,7 @@
     "fields": {
         "action": "Set & Checked PNF", 
         "item": "Pressurization", 
-        "order": 15, 
+        "order": 16, 
         "checklist_phase": 1
     }
 },
@@ -563,7 +563,7 @@
     "fields": {
         "action": "Checked PNF*", 
         "item": "Packs", 
-        "order": 16, 
+        "order": 17, 
         "checklist_phase": 1
     }
 },
@@ -573,7 +573,7 @@
     "fields": {
         "action": "Armed PNF", 
         "item": "Emergency Lights", 
-        "order": 17, 
+        "order": 18, 
         "checklist_phase": 1
     }
 },
@@ -583,7 +583,7 @@
     "fields": {
         "action": "Off, __L/__R PNF", 
         "item": "Fuel Transfer, Quantity", 
-        "order": 18, 
+        "order": 19, 
         "checklist_phase": 1
     }
 },
@@ -593,7 +593,7 @@
     "fields": {
         "action": "On & Checked PNF", 
         "item": "Parking Brake, Pressure", 
-        "order": 19, 
+        "order": 20, 
         "checklist_phase": 1
     }
 },
@@ -603,7 +603,7 @@
     "fields": {
         "action": "Disc, Fuel Off PNF", 
         "item": "Power and Condition Levers", 
-        "order": 20, 
+        "order": 21, 
         "checklist_phase": 1
     }
 },
@@ -613,7 +613,7 @@
     "fields": {
         "action": "Off PNF", 
         "item": "Nose Steering", 
-        "order": 21, 
+        "order": 22, 
         "checklist_phase": 1
     }
 },
@@ -623,7 +623,7 @@
     "fields": {
         "action": "Set PNF", 
         "item": "FMS", 
-        "order": 22, 
+        "order": 23, 
         "checklist_phase": 1
     }
 },
@@ -633,7 +633,7 @@
     "fields": {
         "action": "Completed PNF", 
         "item": "Takeoff and Departure Briefing", 
-        "order": 23, 
+        "order": 24, 
         "checklist_phase": 1
     }
 },
@@ -3085,6 +3085,16 @@
         "item": "ND Mode and Range", 
         "order": 183, 
         "checklist_phase": 15
+    }
+},
+{
+    "pk": 270, 
+    "model": "core.checkliststep", 
+    "fields": {
+        "action": "Tie PNF", 
+        "item": "Main Bus Tie", 
+        "order": 3, 
+        "checklist_phase": 1
     }
 }
 ]
