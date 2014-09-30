@@ -1,5 +1,5 @@
 #!/bin/bash
-heroku run python manage.py dumpdata --indent=4 | tail -n +2 | tee from_prod.json
+heroku run python manage.py dumpdata core --indent=4 | tail -n +2 | tee prod.json
 rm db.sqlite3
 python manage.py syncdb --migrate
-python manage.py loaddata from_prod.json
+python manage.py loaddata prod.json
