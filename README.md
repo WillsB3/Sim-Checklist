@@ -27,11 +27,18 @@ With that setup out the way you should be good to get the development environmen
 1. In a teminal tab: `$ python manage.py runserver`
 2. In another tab: `$ grunt watch`
 
+### Deployment
+
+1. Run `grunt build`
+2. Commit changed static files
+3. Push to Heroku (only)
+4. Reset HEAD to commit before committing static files.
+
 ### Uploading data from local to prod
 
 1. Run `./dump_data.sh`
 2. Commit `local.json`
-3. Push to heroku
+3. Deploy as normal (See above)
 4. run `heroku run load_data.sh`
 
 ### Load production data in local 
