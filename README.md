@@ -29,7 +29,7 @@ With that setup out the way you should be good to get the development environmen
 
 ### Uploading data from local to prod
 
-1. Run `dump_data.sh`
+1. Run `./dump_data.sh`
 2. Commit `local.json`
 3. Push to heroku
 4. run `heroku run load_data.sh`
