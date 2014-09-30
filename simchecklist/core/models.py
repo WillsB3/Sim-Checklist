@@ -40,7 +40,7 @@ class ChecklistPhase(models.Model):
 
     class Meta:
         ordering = ('order',)
-        unique_together = ('checklist', 'order')
+        # unique_together = ('checklist', 'order')
 
 
 class ChecklistStep(models.Model):
@@ -52,4 +52,4 @@ class ChecklistStep(models.Model):
 
     class Meta:
         ordering = ('order',)
-        unique_together = ('checklist_phase', 'order')
+        # unique_together = ('checklist_phase', 'order')
