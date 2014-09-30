@@ -1,1 +1,1 @@
-python manage.py dumpdata core > data.json
+python manage.py dumpdata core --indent=4 > data.json

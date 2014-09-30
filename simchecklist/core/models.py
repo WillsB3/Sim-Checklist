@@ -28,22 +28,28 @@ class Checklist(models.Model):
         return "{aircraft} checklist".format(aircraft=self.aircraft)
 
 
-class ChecklistPhase(OrderedModel):
+class ChecklistPhase(models.Model):
     checklist = models.ForeignKey(Checklist, related_name='phases')
     name = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='name', unique_with='checklist')
+
+    order = models.PositiveIntegerField(db_index=True)
 
     def __unicode__(self):
         return self.name
 
     class Meta:
         ordering = ('order',)
+        unique_together = ('checklist', 'order')
 
 
-class ChecklistStep(OrderedModel):
+class ChecklistStep(models.Model):
     checklist_phase = models.ForeignKey(ChecklistPhase, related_name='steps')
     item = models.CharField(max_length=200)
     action = models.CharField(max_length=200)
 
+    order = models.PositiveIntegerField(db_index=True)
+
     class Meta:
         ordering = ('order',)
+        unique_together = ('checklist_phase', 'order')

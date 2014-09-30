@@ -1,0 +1,559 @@
+[
+{
+    "pk": 1, 
+    "fields": {
+        "name": "log entry", 
+        "app_label": "admin", 
+        "model": "logentry"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 2, 
+    "fields": {
+        "name": "permission", 
+        "app_label": "auth", 
+        "model": "permission"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 3, 
+    "fields": {
+        "name": "group", 
+        "app_label": "auth", 
+        "model": "group"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 4, 
+    "fields": {
+        "name": "user", 
+        "app_label": "auth", 
+        "model": "user"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 5, 
+    "fields": {
+        "name": "content type", 
+        "app_label": "contenttypes", 
+        "model": "contenttype"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 6, 
+    "fields": {
+        "name": "session", 
+        "app_label": "sessions", 
+        "model": "session"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 7, 
+    "fields": {
+        "name": "migration history", 
+        "app_label": "south", 
+        "model": "migrationhistory"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 8, 
+    "fields": {
+        "name": "aircraft", 
+        "app_label": "core", 
+        "model": "aircraft"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 9, 
+    "fields": {
+        "name": "checklist", 
+        "app_label": "core", 
+        "model": "checklist"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 10, 
+    "fields": {
+        "name": "checklist phase", 
+        "app_label": "core", 
+        "model": "checklistphase"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": 11, 
+    "fields": {
+        "name": "checklist step", 
+        "app_label": "core", 
+        "model": "checkliststep"
+    }, 
+    "model": "contenttypes.contenttype"
+},
+{
+    "pk": "jtqe8s0v1hbhu5ybp70l3pqbezq9xut6", 
+    "fields": {
+        "session_data": "YTA3MTA3MjZkZDVjMjk1OTg0NmQ1YjE2N2M0Zjk2YmI2YzU0NDU1Yzp7Il9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9pZCI6MX0=", 
+        "expire_date": "2014-08-26T22:45:25.333Z"
+    }, 
+    "model": "sessions.session"
+},
+{
+    "pk": 1, 
+    "fields": {
+        "migration": "0001_initial", 
+        "applied": "2014-08-12T22:45:12.372Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 2, 
+    "fields": {
+        "migration": "0002_auto__add_field_checklist_name", 
+        "applied": "2014-08-12T22:45:12.400Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 3, 
+    "fields": {
+        "migration": "0003_auto__add_field_checklistphase_slug", 
+        "applied": "2014-08-12T22:45:12.430Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 4, 
+    "fields": {
+        "migration": "0004_auto__add_field_aircraft_class_name", 
+        "applied": "2014-08-12T22:45:12.452Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 5, 
+    "fields": {
+        "migration": "0005_auto__del_checklist__del_field_checklistphase_checklist__add_field_che", 
+        "applied": "2014-08-12T22:45:12.496Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 6, 
+    "fields": {
+        "migration": "0006_auto__add_field_checkliststep_order", 
+        "applied": "2014-08-12T22:45:12.533Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 7, 
+    "fields": {
+        "migration": "0007_auto__add_field_checklistphase_order", 
+        "applied": "2014-08-12T22:45:12.571Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 8, 
+    "fields": {
+        "migration": "0008_auto__add_field_aircraft_slug__chg_field_checklistphase_slug", 
+        "applied": "2014-08-12T22:45:12.675Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 9, 
+    "fields": {
+        "migration": "0009_auto__add_field_aircraft_first_phase_slug", 
+        "applied": "2014-08-12T22:45:12.716Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 10, 
+    "fields": {
+        "migration": "0010_auto__add_checklist__del_field_aircraft_first_phase_slug__del_field_ch", 
+        "applied": "2014-08-12T22:45:12.779Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 11, 
+    "fields": {
+        "migration": "0011_auto__del_field_checklist_first_phase_slug__chg_field_checklist_aircra", 
+        "applied": "2014-08-12T22:45:12.837Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 12, 
+    "fields": {
+        "migration": "0012_auto__chg_field_checklistphase_slug", 
+        "applied": "2014-08-12T22:45:12.880Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 13, 
+    "fields": {
+        "migration": "0013_auto__add_field_checklist_published", 
+        "applied": "2014-08-12T22:45:12.907Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 14, 
+    "fields": {
+        "migration": "0014_auto__add_field_aircraft_published", 
+        "applied": "2014-08-12T22:45:12.939Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 15, 
+    "fields": {
+        "migration": "0015_auto__del_field_aircraft_published", 
+        "applied": "2014-08-12T22:45:12.962Z", 
+        "app_name": "core"
+    }, 
+    "model": "south.migrationhistory"
+},
+{
+    "pk": 1, 
+    "fields": {
+        "name": "Can add log entry", 
+        "codename": "add_logentry", 
+        "content_type": 1
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 2, 
+    "fields": {
+        "name": "Can change log entry", 
+        "codename": "change_logentry", 
+        "content_type": 1
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 3, 
+    "fields": {
+        "name": "Can delete log entry", 
+        "codename": "delete_logentry", 
+        "content_type": 1
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 4, 
+    "fields": {
+        "name": "Can add permission", 
+        "codename": "add_permission", 
+        "content_type": 2
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 5, 
+    "fields": {
+        "name": "Can change permission", 
+        "codename": "change_permission", 
+        "content_type": 2
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 6, 
+    "fields": {
+        "name": "Can delete permission", 
+        "codename": "delete_permission", 
+        "content_type": 2
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 7, 
+    "fields": {
+        "name": "Can add group", 
+        "codename": "add_group", 
+        "content_type": 3
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 8, 
+    "fields": {
+        "name": "Can change group", 
+        "codename": "change_group", 
+        "content_type": 3
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 9, 
+    "fields": {
+        "name": "Can delete group", 
+        "codename": "delete_group", 
+        "content_type": 3
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 10, 
+    "fields": {
+        "name": "Can add user", 
+        "codename": "add_user", 
+        "content_type": 4
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 11, 
+    "fields": {
+        "name": "Can change user", 
+        "codename": "change_user", 
+        "content_type": 4
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 12, 
+    "fields": {
+        "name": "Can delete user", 
+        "codename": "delete_user", 
+        "content_type": 4
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 13, 
+    "fields": {
+        "name": "Can add content type", 
+        "codename": "add_contenttype", 
+        "content_type": 5
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 14, 
+    "fields": {
+        "name": "Can change content type", 
+        "codename": "change_contenttype", 
+        "content_type": 5
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 15, 
+    "fields": {
+        "name": "Can delete content type", 
+        "codename": "delete_contenttype", 
+        "content_type": 5
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 16, 
+    "fields": {
+        "name": "Can add session", 
+        "codename": "add_session", 
+        "content_type": 6
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 17, 
+    "fields": {
+        "name": "Can change session", 
+        "codename": "change_session", 
+        "content_type": 6
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 18, 
+    "fields": {
+        "name": "Can delete session", 
+        "codename": "delete_session", 
+        "content_type": 6
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 19, 
+    "fields": {
+        "name": "Can add migration history", 
+        "codename": "add_migrationhistory", 
+        "content_type": 7
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 20, 
+    "fields": {
+        "name": "Can change migration history", 
+        "codename": "change_migrationhistory", 
+        "content_type": 7
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 21, 
+    "fields": {
+        "name": "Can delete migration history", 
+        "codename": "delete_migrationhistory", 
+        "content_type": 7
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 22, 
+    "fields": {
+        "name": "Can add aircraft", 
+        "codename": "add_aircraft", 
+        "content_type": 8
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 23, 
+    "fields": {
+        "name": "Can change aircraft", 
+        "codename": "change_aircraft", 
+        "content_type": 8
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 24, 
+    "fields": {
+        "name": "Can delete aircraft", 
+        "codename": "delete_aircraft", 
+        "content_type": 8
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 25, 
+    "fields": {
+        "name": "Can add checklist", 
+        "codename": "add_checklist", 
+        "content_type": 9
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 26, 
+    "fields": {
+        "name": "Can change checklist", 
+        "codename": "change_checklist", 
+        "content_type": 9
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 27, 
+    "fields": {
+        "name": "Can delete checklist", 
+        "codename": "delete_checklist", 
+        "content_type": 9
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 28, 
+    "fields": {
+        "name": "Can add checklist phase", 
+        "codename": "add_checklistphase", 
+        "content_type": 10
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 29, 
+    "fields": {
+        "name": "Can change checklist phase", 
+        "codename": "change_checklistphase", 
+        "content_type": 10
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 30, 
+    "fields": {
+        "name": "Can delete checklist phase", 
+        "codename": "delete_checklistphase", 
+        "content_type": 10
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 31, 
+    "fields": {
+        "name": "Can add checklist step", 
+        "codename": "add_checkliststep", 
+        "content_type": 11
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 32, 
+    "fields": {
+        "name": "Can change checklist step", 
+        "codename": "change_checkliststep", 
+        "content_type": 11
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 33, 
+    "fields": {
+        "name": "Can delete checklist step", 
+        "codename": "delete_checkliststep", 
+        "content_type": 11
+    }, 
+    "model": "auth.permission"
+},
+{
+    "pk": 1, 
+    "fields": {
+        "email": "ben@sharkbyte.co.uk", 
+        "is_active": true, 
+        "is_staff": true, 
+        "last_login": "2014-08-12T22:45:25.318Z", 
+        "first_name": "", 
+        "last_name": "", 
+        "groups": [], 
+        "password": "pbkdf2_sha256$12000$pZyFowVYRcZC$sja8Jazyu9dnGxGJJsdPb/Zp4FZaWwz7HSY85xV+OOg=", 
+        "user_permissions": [], 
+        "is_superuser": true, 
+        "date_joined": "2014-08-12T22:45:11.946Z", 
+        "username": "ben"
+    }, 
+    "model": "auth.user"
+}
+]
