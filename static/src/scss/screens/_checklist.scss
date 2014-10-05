@@ -21,20 +21,29 @@
 
 .checklist {
 	font-weight: 300;
+	margin: 0em -16px;
 	padding: 0;
 
 	table {
 		width: 100%;
+	}
+
+	@media only screen and (min-width: 720px) {
+		margin: 0em;
 	}
 }
 
 .checklist__item {
 	$border: 1px solid rgb(224, 224, 224);
 	border: $border;
-	border-bottom-style: none;
+	border-style: solid none none none;
 
 	&:last-child {
 		border-bottom: $border;
+	}
+
+	@media only screen and (min-width: 720px) {
+		border-style: solid solid none solid;
 	}
 
 	@at-root .checklist__item-cell {
