@@ -4,6 +4,7 @@ module.exports = function(grunt, options) {
 
 	var semver = require('semver');
 	var chalk = require('chalk');
+	var pkg = require('../package.json');
 
 	return {
 		bump: {
@@ -12,26 +13,26 @@ module.exports = function(grunt, options) {
 					{
 						config:  'bump.increment',
 						type:    'list',
-						message: 'Bump version from ' + chalk.cyan('<%= package.version %>') + ' to:',
+						message: 'Bump version from ' + chalk.cyan(pkg.version) + ' to:',
 						choices: [
 							{
 								value: 'build',
-								name:  chalk.yellow('Build: <%= pkg.version %>-?') +
-									' Unstable, betas, and release candidates.'
+								name:  chalk.yellow('Build:  ' + pkg.version) +
+									'   Unstable, betas, and release candidates.'
 							},
 							{
 								value: 'patch',
-								name:  chalk.yellow('Patch:  ' + semver.inc(grunt.config('pkg.version'), 'patch')) +
+								name:  chalk.yellow('Patch:  ' + semver.inc(pkg.version, 'patch')) +
 									'   Backwards-compatible bug fixes.'
 							},
 							{
 								value: 'minor',
-								name:  chalk.yellow('Minor:  ' + semver.inc(grunt.config('pkg.version'), 'minor')) +
+								name:  chalk.yellow('Minor:  ' + semver.inc(pkg.version, 'minor')) +
 									'   Add functionality in a backwards-compatible manner.'
 							},
 							{
 								value: 'major',
-								name:  chalk.yellow('Major:  ' + semver.inc(grunt.config('pkg.version'), 'major')) +
+								name:  chalk.yellow('Major:  ' + semver.inc(pkg.version, 'major')) +
 									'   Incompatible API changes.'
 							},
 							{
