@@ -3,7 +3,6 @@ dev:
     '<%= tmp.css %>/<%= package.name %>.css' : '<%= src.scss %>/<%= package.name %>.scss'
   options:
     style: 'expanded'
-    sourcemap: true
 
 build:
   files:
