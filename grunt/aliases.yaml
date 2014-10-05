@@ -48,5 +48,11 @@ use:
     - 'filerev'
     - 'usemin'
 
+bump-version:
+  description: 'Increment the version number of the application.'
+  tasks:
+    - 'prompt:bump'
+    - 'bump'
+
 default:
   - dev
