@@ -1,6 +1,6 @@
 options:
   files:
-    -'package.json'
+    - 'package.json'
   commitFiles:
     - '.'
   pushTo: 'origin'
