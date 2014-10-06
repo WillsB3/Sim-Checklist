@@ -3,5 +3,4 @@ options:
     -'package.json'
   commitFiles:
     - '.'
-  commit: true
   pushTo: 'origin'
